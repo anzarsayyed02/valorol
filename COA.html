@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates of Analysis (COA) | Valorol</title>
+
+  <!-- CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hover effects */
+    .card {
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Toggle buttons */
+    .view-toggle button {
+      border: 2px solid #005596;
+      color: #005596;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .view-toggle button.active {
+      background: linear-gradient(135deg, #005596, #003f73);
+      color: white;
+    }
+
+    .view-toggle button:hover {
+      background: #005596;
+      color: white;
+    }
+
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.08);
+    }
+
+    .nav-link {
+      color: #004C8C;
+      font-weight: 500;
+      margin: 0 20px;
+      transition: color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #FFB400;
+      transform: translateY(-2px);
+    }
+
+
+    .navbar.scrolled .nav-link:hover {
+      color: #FFB400;
+    }
+
+    /* Mobile menu */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    /* Dropdown items styling */
+    .dropdown-item {
+      color: #004C8C;
+      transition: color 0.3s ease, transform 0.2s;
+    }
+
+    .dropdown-item:hover {
+      color: #FFB400;
+      transform: translateY(-2px);
+    }
+
+    /* Loading spinner */
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      color: #6b7280;
+    }
+
+    .loading-spinner .spinner-border {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-width: 3px;
+      color: #005596;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top animate_animated animate_fadeInDown">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+
+          <!-- Product Dropdown -->
+          <li class="nav-item dropdown hover-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown">
+              Product
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="productDropdown">
+              <li><a class="dropdown-item" href="product1.html">Acetone</a></li>
+              <li><a class="dropdown-item" href="product2.html">Methanol</a></li>
+              <li><a class="dropdown-item" href="product3.html">Dichloromethane</a></li>
+              <li><a class="dropdown-item" href="product4.html">Isopropyl Alcohol</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CSS for hover -->
+  <style>
+    @media (min-width: 992px) {
+      .hover-dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  </style>
+<br>
+
+  <!-- Header Section -->
+<section id="about-hero"
+         class="position-relative text-center d-flex align-items-center justify-content-center overflow-hidden"
+         style="height:70vh; color:white; font-family:'Poppins',sans-serif;
+                background: linear-gradient(rgba(0,73,144,0.6), rgba(0,73,144,0.6)),
+                             center/cover no-repeat;">
+  <video autoplay muted loop playsinline 
+         class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;">
+    <source src="images/6.mp4" type="video/mp4">
+  </video>
+
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,73,144,0.55); z-index:1;"></div>
+
+  <div class="container position-relative" data-aos="fade-up" style="z-index:2;">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
+        <li class="breadcrumb-item"><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item active text-warning" aria-current="page">COA</li>
+      </ol>
+    </nav>
+
+    <h1 class="display-5 fw-bold mb-2">Product <span style="color:#FFC72C;">COA</span></h1>
+    <p class="lead mb-0 fw-light">Get a product COA</p>
+  </div>
+
+  <div class="position-absolute bottom-0 start-0 w-100" 
+       style="height:100px; background:linear-gradient(to top,rgba(255,255,255,0.95),transparent); z-index:1;">
+  </div>
+</section>
+<br><br><br>
+    <h1 class="display-5 fw-bold mb-2" style="text-align: center;">Search product </h1>
+  <!-- Search Bar + View Toggle -->
+  <section class="py-5" style="background-color:#f8f9fa;">
+    <div class="container" data-aos="fade-up" data-aos-duration="800">
+      <div class="row justify-content-center align-items-center g-3">
+        <div class="col-lg-8 col-md-10">
+          <div class="input-group input-group-lg shadow-sm">
+            <input type="text" id="searchInput" class="form-control"
+              placeholder="Search COA by Product Name, Batch No. or Code..."
+              style="border:2px solid #005596; border-right:none; border-radius:12px 0 0 12px;">
+            <button class="btn text-white px-4" id="searchBtn"
+              style="background-color:#005596; border-radius:0 12px 12px 0;">
+              <i class="bi bi-search me-1"></i> Search
+            </button>
+          </div>
+        </div>
+
+        <!-- View toggle icons -->
+        <div class="col-auto view-toggle d-flex gap-2">
+          <button id="gridViewBtn" class="btn active" title="Grid View">
+            <i class="bi bi-grid-fill fs-5"></i>
+          </button>
+          <button id="listViewBtn" class="btn" title="List View">
+            <i class="bi bi-list-task fs-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COA Listing -->
+  <section class="py-5">
+    <div class="container" id="coaList" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Loading state shown until JSON is fetched -->
+      <div class="loading-spinner">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading COA entries...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data + JS Logic -->
+  <script>
+AOS.init();
+
+// ── CHANGED: Load data from JSON file instead of hardcoded array ──
+let coaData = [];
+
+const coaContainer = document.getElementById('coaList');
+let currentView = 'grid';
+
+// Fetch COA data from JSON file
+fetch('coa_data.json')
+  .then(response => {
+    if (!response.ok) throw new Error('Failed to load COA data');
+    return response.json();
+  })
+  .then(data => {
+    coaData = data;
+    displayCOAs(coaData);
+  })
+  .catch(error => {
+    coaContainer.innerHTML = '<p class="text-center text-muted fs-5">Unable to load COA data. Please try again later.</p>';
+  });
+
+// Display Function
+function displayCOAs(data) {
+  coaContainer.innerHTML = '';
+
+  if (data.length === 0) {
+    coaContainer.innerHTML = '<p class="text-center text-muted fs-5">No COA found for your search.</p>';
+    return;
+  }
+
+if (currentView === 'grid') {
+  coaContainer.innerHTML = `
+    <div class="row g-4">
+      ${data.map(item => `
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative overflow-hidden"
+               style="
+                 border-radius:16px; 
+                 border:2px solid #000; 
+                 background:linear-gradient(180deg, #ffffff 70%, #f9fbfd 100%); 
+                 transition:all 0.3s ease;
+               ">
+            
+            <!-- Decorative Top Border -->
+            <div style="height:5px; background:linear-gradient(90deg, #004990, #FFC72C);"></div>
+            
+            <div class="card-body text-center py-4 px-3">
+              <div class="mb-3">
+                <i class="bi bi-file-earmark-text-fill text-primary fs-1"></i>
+              </div>
+              <h5 class="fw-semibold text-dark mb-2">${item.product}</h5>
+              <p class="small text-muted mb-3">
+                <strong>Batch:</strong> ${item.batch}<br>
+                <strong>Code:</strong> ${item.code}<br>
+              </p>
+              <div class="d-flex justify-content-center gap-2">
+                <a href="assets/coa/${item.file}" target="_blank" 
+                   class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                  <i class="bi bi-eye me-1"></i> Preview
+                </a>
+                <a href="assets/coa/${item.file}" download 
+                   class="btn btn-warning btn-sm rounded-pill px-3 fw-semibold" 
+                   style="color:#004990;">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+
+  else {
+    // List View
+    coaContainer.innerHTML = data.map(item => `
+      <div class="card mb-3 shadow-sm border-0 position-relative overflow-hidden"
+           style="border:2px solid #000; border-radius:14px; background:#fff; transition:all 0.3s ease;">
+        
+        <!-- Blue Accent Strip -->
+        <div style="position:absolute; left:0; top:0; height:100%; width:6px; background-color:#004990;"></div>
+
+        <div class="card-body d-flex justify-content-between align-items-center flex-wrap ps-4">
+          <div class="mb-2">
+            <h5 class="fw-semibold text-dark mb-1">${item.product}</h5>
+            <small class="text-muted">
+              <strong>Batch:</strong> ${item.batch} | 
+              <strong>Code:</strong> ${item.code} 
+            </small>
+          </div>
+          <div class="d-flex gap-2">
+            <a href="assets/coa/${item.file}" target="_blank" 
+               class="btn btn-outline-primary btn-sm rounded-pill px-3">
+              <i class="bi bi-eye me-1"></i> Preview
+            </a>
+            <a href="assets/coa/${item.file}" download 
+               class="btn btn-warning btn-sm rounded-pill px-3 fw-semibold" style="color:#004990;">
+              <i class="bi bi-download me-1"></i> Download
+            </a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+// Search Function
+function searchCOAs() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const filtered = coaData.filter(item =>
+    item.product.toLowerCase().includes(query) ||
+    item.batch.toLowerCase().includes(query) ||
+    item.code.toLowerCase().includes(query)
+  );
+  displayCOAs(filtered);
+}
+
+document.getElementById('searchBtn').addEventListener('click', searchCOAs);
+document.getElementById('searchInput').addEventListener('keyup', e => { if (e.key === 'Enter') searchCOAs(); });
+
+// Toggle View Logic
+document.getElementById('gridViewBtn').addEventListener('click', () => {
+  currentView = 'grid';
+  document.getElementById('gridViewBtn').classList.add('active');
+  document.getElementById('listViewBtn').classList.remove('active');
+  searchCOAs();
+});
+
+document.getElementById('listViewBtn').addEventListener('click', () => {
+  currentView = 'list';
+  document.getElementById('listViewBtn').classList.add('active');
+  document.getElementById('gridViewBtn').classList.remove('active');
+  searchCOAs();
+});
+  </script>
+<!-- Required JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+
+  <script>
+    // Navbar color change on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Magnific Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+<footer class="text-light pt-5"
+  style="background:linear-gradient(135deg,#002b5c 0%,#004990 100%); font-family:'Poppins',sans-serif;">
+  <div class="container">
+
+    <div class="row gy-4 text-center text-md-start">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <img src="images/Valorol.png" alt="Valorol Logo" class="mb-3 img-fluid" style="max-width:150px;">
+        <p class="text-light opacity-75 small">
+          Valorol by Cognizant Chemical Pvt. Ltd. is a trusted brand in pharmacopeia-grade solvents - ensuring
+          unmatched purity and performance across industries.
+        </p>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Quick Links</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="aboutus.html" class="footer-link">About Us</a></li>
+          <li><a href="#products" class="footer-link">Product</a></li>
+          <li><a href="COA.html" class="footer-link">COA</a></li>
+          <li><a href="contactus.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Our Products</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a class="footer-link" href="product1.html">Acetone</a></li>
+          <li><a class="footer-link" href="product2.html">Methanol</a></li>
+          <li><a class="footer-link" href="product3.html">Dichloromethane</a></li>
+          <li><a class="footer-link" href="product4.html">Isopropyl Alcohol</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Contact Us</h5>
+        <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
+        <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> admin@valorol.com</p>
+        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 9619662255   /   +91 9930272227</p>
+      </div>
+
+    </div>
+
+    <hr class="my-4" style="border-color:#ffffff33;">
+
+    <div class="text-center pb-3 small">
+      &copy; <span id="year"></span> <strong>Valorol</strong> | A Brand by Cognizant Chemical Pvt. Ltd. | All Rights
+      Reserved.
+    </div>
+  </div>
+
+  <style>
+    .footer-link {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: all .3s ease;
+    }
+
+    .footer-link:hover {
+      color: #FFC72C;
+      transform: translateX(4px);
+    }
+
+    .hover-gold:hover {
+      color: #FFC72C !important;
+      transform: scale(1.2);
+      transition: all .3s ease;
+    }
+
+    @media (max-width: 576px) {
+      footer img {
+        max-width: 120px;
+      }
+
+      footer p,
+      footer li,
+      footer a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+</html>
