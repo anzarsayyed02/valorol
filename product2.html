@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorol | Home</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- 🎨 Font Awesome (Icons CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ✅ Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- ✅ Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- ✅ AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- ✅ Magnific Popup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <style>
+   * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      /* dark blue */
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.08);
+    }
+
+    .nav-link {
+      color: #004C8C;
+      font-weight: 500;
+      margin: 0 20px;
+      transition: color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #FFB400;
+      /* yellow accent */
+      transform: translateY(-2px);
+    }
+
+
+    .navbar.scrolled .nav-link:hover {
+      color: #FFB400;
+    }
+
+    /* Mobile menu */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    /* Dropdown items styling */
+.dropdown-item {
+  color: #004C8C; /* default text color same as nav-link */
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-item:hover {
+  color: #FFB400; /* yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Agar navbar dark mode ya scrolled hai */
+.navbar.scrolled .dropdown-item:hover {
+  color: #FFB400;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top animate_animated animate_fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+
+        <!-- Product Dropdown -->
+        <li class="nav-item dropdown hover-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown">
+            Product
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productDropdown">
+            <li><a class="dropdown-item" href="product1.html">Acetone</a></li>
+            <li><a class="dropdown-item" href="product2.html">Methanol</a></li>
+            <li><a class="dropdown-item" href="product3.html">Dichloromethane</a></li>
+            <li><a class="dropdown-item" href="product4.html">Isopropyl Alcohol</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- CSS for hover -->
+<style>
+  /* Hover dropdown only for desktop */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Custom JS for hover dropdown -->
+<script>
+  const dropdown = document.getElementById('productDropdownHover');
+  dropdown.addEventListener('mouseenter', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.show();
+  });
+  dropdown.addEventListener('mouseleave', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.hide();
+  });
+</script>
+    <!-- ====== PRODUCT HERO SECTION (PREMIUM DESIGN) ====== -->
+    <!-- ====== PRODUCT HERO SECTION (CLEAN CENTERED) ====== -->
+    <section id="product-hero"
+        class="position-relative d-flex align-items-center justify-content-center text-white text-center" style="min-height:90vh; font-family:'Poppins',sans-serif; 
+         background:url('images/bg2.jpg') center/cover no-repeat; overflow:hidden;">
+
+        <!-- Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(135deg, rgba(0,30,80,0.9) 0%, rgba(0,73,144,0.8) 50%, rgba(0,30,80,0.9) 100%);
+              backdrop-filter:blur(2px);">
+        </div>
+
+        <div class="container position-relative z-1" data-aos="fade-up">
+            <h5 class="text-uppercase fw-semibold mb-3" style="letter-spacing:2px; color:#FFC72C;">
+                Premium Pharmaceutical Grade
+            </h5>
+
+            <h1 class="fw-bold display-4 mb-3">
+                Valorol <span style="color:#FFC72C;">Methanol</span>
+            </h1>
+
+            <p class="lead mb-4 mx-auto" style="color:#e3e7ef; max-width:650px;">
+                Trusted by global pharmaceutical leaders for its unmatched purity, precision,
+                and compliance with <strong>international standards</strong>.
+            </p>
+
+            <a href="#product-overview" class="btn fw-semibold px-4 py-2 rounded-pill shadow-sm"
+                style="background-color:#FFC72C; color:#004990; border:none;">
+                <i class="fa-solid fa-arrow-down me-2"></i> Explore Product
+            </a>
+        </div>
+
+        <!-- Bottom Fade -->
+        <div class="position-absolute bottom-0 start-0 w-100"
+            style="height:120px; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f8f9fb 100%);">
+        </div>
+    </section>
+
+
+    <!-- Floating Image Animation -->
+    <style>
+        .floating-img {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+    </style>
+
+
+
+
+    <!-- ====== ABOUT PRODUCT: ACETONE BP ====== -->
+    <section id="acetone-about" class="py-5"
+        style="background:linear-gradient(180deg,#f8f9fb 0%,#ffffff 100%); font-family:'Poppins',sans-serif;">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Product Image -->
+                <div class="col-lg-5 text-center" data-aos="fade-right" data-aos-delay="100">
+                    <div class="rounded-4 shadow-lg overflow-hidden position-relative">
+                        <img src="images/3e26934b-67c8-4c81-a5e2-b6ec5e327a9b.jpg" alt="Acetone BP"
+                            class="img-fluid rounded-4">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background:linear-gradient(180deg,rgba(0,73,144,0.1),rgba(255,255,255,0.1));"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Product Details -->
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="fw-bold mb-3" style="color:#004990;">🧪 Methanol — <span style="color:#FFC72C;">Pharma
+                            Grade Solvent</span></h2>
+                    <hr class="mt-2 mb-4" style="width:80px; height:3px; background:#FFC72C; border:none;">
+
+                    <!-- Overview -->
+                    <p class="lead text-secondary mb-4">
+                        <strong> Methanol </strong> is a high-purity industrial chemical widely used as a solvent, fuel, and raw material in chemical manufacturing. We supply premium-grade Methanol for diverse industrial applications with assured quality and reliability.
+                    </p>
+
+                    <!-- Info Grid -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-4 border-primary">
+                                <i class="fa-solid fa-droplet mb-3 fs-3 text-primary"></i>
+                                <h6 class="fw-semibold text-primary mb-1">Purity & Composition</h6>
+                                <p class="small text-muted mb-0">Clear, colorless, volatile liquid with mild odor,
+                                    ensuring ≥99.5% purity.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-4 border-warning">
+                                <i class="fa-solid fa-bolt mb-3 fs-3 text-warning"></i>
+                                <h6 class="fw-semibold text-primary mb-1">Performance</h6>
+                                <p class="small text-muted mb-0">Rapid evaporation and excellent solubility make it
+                                    ideal for pharma and lab use.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-4 border-success">
+                                <i class="fa-solid fa-industry mb-3 fs-3 text-success"></i>
+                                <h6 class="fw-semibold text-primary mb-1">Applications</h6>
+                                <p class="small text-muted mb-0">Used in drug formulation, purification of APIs,
+                                    cosmetics, and coatings.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-4 border-info">
+                                <i class="fa-solid fa-certificate mb-3 fs-3 text-info"></i>
+                                <h6 class="fw-semibold text-primary mb-1">Compliance</h6>
+                                <p class="small text-muted mb-0">Manufactured in ISO-certified plants; conforms to BP
+                                    and global pharmacopeia standards.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight CTA -->
+                    <div class="mt-5">
+                        <a href="#" class="btn px-4 py-2 fw-semibold rounded-pill shadow-sm me-2"
+                            style="background:#004990; color:white;">
+                            <i class="fa-solid fa-download me-2"></i>Download TDS
+                        </a>
+                        <a href="#contact" class="btn px-4 py-2 fw-semibold rounded-pill shadow-sm"
+                            style="background:#FFC72C; color:#004990;">
+                            <i class="fa-solid fa-envelope me-2"></i>Request Sample
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Table Styling -->
+    <style>
+        #specifications table th {
+            background-color: rgba(0, 73, 144, 0.05);
+            font-weight: 600;
+        }
+
+        #specifications table td {
+            color: #444;
+        }
+
+        #specifications table tr:hover td {
+            background-color: rgba(255, 199, 44, 0.08);
+            transition: 0.3s ease;
+        }
+    </style>
+
+   
+<!-- ====== PRODUCT DETAILS (SPECIFICATIONS + WHY VALOROL) ====== -->
+<section id="product-details" class="py-5" style="font-family:'Poppins',sans-serif;
+        background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%);
+        position:relative; overflow:hidden;">
+
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center g-5">
+
+      <!-- LEFT SIDE: SPECIFICATIONS -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="fw-bold display-6 mb-4" style="color:#004990;">
+          Product <span style="color:#FFC72C;">Specifications</span>
+        </h2>
+        <p class="text-muted mb-4">
+          Precision-defined parameters that uphold Valorol’s commitment to quality and consistency.
+        </p>
+
+        <div class="table-responsive shadow-lg rounded-4 overflow-hidden">
+          <table class="table table-borderless align-middle mb-0" style="background-color:#ffffff;">
+            <thead class="text-white" style="background:linear-gradient(90deg,#666c72 0%,#0a56b3 100%);">
+              <tr>
+                <th class="py-3 px-4 fs-6 fw-semibold" style="width:40%;">Parameter</th>
+                <th class="py-3 px-4 fs-6 fw-semibold">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="py-3 px-4 fw-semibold text-primary">Chemical Name</td><td class="py-3 px-4">Methanol</td></tr>
+              <tr class="table-highlight"><td class="py-3 px-4 fw-semibold text-primary">Grade</td><td class="py-3 px-4">BP / USP / EP / NF</td></tr>
+              <tr><td class="py-3 px-4 fw-semibold text-primary">Appearance</td><td class="py-3 px-4">Clear, colorless liquid</td></tr>
+              <tr class="table-highlight"><td class="py-3 px-4 fw-semibold text-primary">Purity</td><td class="py-3 px-4">≥ 99.5%</td></tr>
+              <tr><td class="py-3 px-4 fw-semibold text-primary">Packaging</td><td class="py-3 px-4">160 kg Drum / ISO Tank</td></tr>
+              <tr class="table-highlight"><td class="py-3 px-4 fw-semibold text-primary">CAS Number</td><td class="py-3 px-4">67-64-1</td></tr>
+              <tr><td class="py-3 px-4 fw-semibold text-primary">HS Code</td><td class="py-3 px-4">29141100</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: WHY VALOROL -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <h2 class="fw-bold display-6 text-dark mb-4">
+          Why <span style="color:#004990;">Valorol Acetone BP</span>?
+        </h2>
+        <p class="text-muted mb-4">
+          Engineered with precision, validated by performance, and trusted by industries worldwide.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="p-4 rounded-4 shadow-sm text-center bg-white hover-glow">
+              <i class="fa-solid fa-flask fs-2 mb-2" style="color:#FFC72C;"></i>
+              <h6 class="fw-semibold text-dark mb-2">Pharma-Grade Purity</h6>
+              <p class="small fw-bold mb-0" style="color:#000;">Exceeding BP standards.</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-4 rounded-4 shadow-sm text-center bg-white hover-glow">
+              <i class="fa-solid fa-shield-halved fs-2 mb-2" style="color:#FFC72C;"></i>
+              <h6 class="fw-semibold text-dark mb-2">Quality Control</h6>
+              <p class="small fw-bold mb-0" style="color:#000;">Multi-point batch testing.</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-4 rounded-4 shadow-sm text-center bg-white hover-glow">
+              <i class="fa-solid fa-leaf fs-2 mb-2" style="color:#FFC72C;"></i>
+              <h6 class="fw-semibold text-dark mb-2">Sustainable Chemistry</h6>
+              <p class="small fw-bold mb-0" style="color:#000;">Eco-conscious process.</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-4 rounded-4 shadow-sm text-center bg-white hover-glow">
+              <i class="fa-solid fa-globe fs-2 mb-2" style="color:#FFC72C;"></i>
+              <h6 class="fw-semibold text-dark mb-2">Global Reliability</h6>
+              <p class="small fw-bold mb-0" style="color:#000;">Supplying 20+ countries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom CSS -->
+  <style>
+    #product-details table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    #product-details thead th {
+      letter-spacing: 0.5px;
+    }
+    #product-details tbody td {
+      font-size: 15px;
+      color: #333;
+      border-top: 1px solid #e5ecf5;
+    }
+    #product-details tbody tr.table-highlight {
+      background: linear-gradient(90deg, rgba(255,199,44,0.05), rgba(0,73,144,0.03));
+    }
+    #product-details tbody tr:hover {
+      background-color: rgba(0,73,144,0.06);
+      transition: all 0.3s ease;
+    }
+    .hover-glow {
+      transition: all 0.4s ease;
+      border: 1px solid transparent;
+    }
+    .hover-glow:hover {
+      border-color: #FFC72C;
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255,199,44,0.25);
+    }
+    @media (max-width: 992px) {
+      #product-details .col-lg-6 {
+        text-align: center;
+      }
+    }
+  </style>
+</section>
+
+
+    <div style="margin-top: 10px;"></div>
+
+    <!-- ====== CALL TO ACTION FOOTER ====== -->
+    <section id="cta-footer" class="py-5 text-center text-white position-relative" style="background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+                font-family: 'Poppins', sans-serif; overflow: hidden;">
+        <div class="container position-relative" data-aos="fade-up">
+
+            <h2 class="fw-bold mb-3 display-6" style="color:#004C8C">
+                Ready to Order <span style="color:#FFC72C;">Methanol</span>
+            </h2>
+            <p class="lead mb-4 fw-medium" style="color:#004C8C;">
+                Empowering Industries with <strong>Purity</strong> and <strong>Performance</strong>.
+            </p>
+
+
+            <!-- CTA Button -->
+            <a href="contact.html" class="btn px-4 py-2 fw-semibold rounded-pill shadow-sm"
+                style="background-color:#FFC72C; color:#004990; border:none;">
+                <i class="fa-solid fa-handshake me-2"></i>Get in Touch
+            </a>
+        </div>
+
+        <!-- Subtle Glow Background -->
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, transparent 70%);">
+        </div>
+    </section>
+    <div style="margin-top: 10px;"></div>
+
+
+
+
+    <!-- ====== Dependencies ====== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+    </script>
+
+
+
+
+
+    <!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ✅ AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+
+
+</body>
+<footer class="text-light pt-5"
+  style="background:linear-gradient(135deg,#002b5c 0%,#004990 100%); font-family:'Poppins',sans-serif;">
+  <div class="container">
+
+    <div class="row gy-4 text-center text-md-start">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <img src="images/Valorol.png" alt="Valorol Logo" class="mb-3 img-fluid" style="max-width:150px;">
+        <p class="text-light opacity-75 small">
+          Valorol™ by Cognizant Chemical Pvt. Ltd. is a trusted brand in pharmacopeia-grade solvents — ensuring
+          unmatched purity and performance across industries.
+        </p>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Quick Links</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="aboutus.html" class="footer-link">About Us</a></li>
+          <li><a href="#products" class="footer-link">Product</a></li>
+          <li><a href="COA.html" class="footer-link">COA</a></li>
+          <li><a href="contactus.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Our Products</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a class="footer-link" href="product1.html">Acetone</a></li>
+          <li><a class="footer-link" href="product2.html">Methanol</a></li>
+          <li><a class="footer-link" href="product3.html">Dichloromethane</a></li>
+          <li><a class="footer-link" href="product4.html">Isopropyl Alcohol</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Contact Us</h5>
+        <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
+        <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> admin@valorol.com</p>
+        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 9619662255   /   +91 9930272227</p>
+      </div>
+
+    </div>
+
+    <hr class="my-4" style="border-color:#ffffff33;">
+
+    <div class="text-center pb-3 small">
+      © <span id="year"></span> <strong>Valorol™</strong> | A Brand by Cognizant Chemical Pvt. Ltd. | All Rights
+      Reserved.
+    </div>
+  </div>
+
+  <style>
+    .footer-link {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: all .3s ease;
+    }
+
+    .footer-link:hover {
+      color: #FFC72C;
+      transform: translateX(4px);
+    }
+
+    .hover-gold:hover {
+      color: #FFC72C !important;
+      transform: scale(1.2);
+      transition: all .3s ease;
+    }
+
+    @media (max-width: 576px) {
+      footer img {
+        max-width: 120px;
+      }
+
+      footer p,
+      footer li,
+      footer a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
+</html>

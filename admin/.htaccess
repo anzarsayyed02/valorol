@@ -1,0 +1,8 @@
+# Protect sensitive files from direct access
+<FilesMatch "(db\.php|setup_db\.sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorol | Home</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- 🎨 Font Awesome (Icons CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ✅ Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- ✅ Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <!-- ✅ AOS (Animate on Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- ✅ Magnific Popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+ html, body { overflow-x: hidden; }
+  * { box-sizing: border-box; }
+    /* Navbar Styling */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      /* dark blue */
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.08);
+    }
+
+    .nav-link {
+      color: #004C8C;
+      font-weight: 500;
+      margin: 0 20px;
+      transition: color 0.3s ease, transform 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #FFB400;
+      /* yellow accent */
+      transform: translateY(-2px);
+    }
+
+
+    .navbar.scrolled .nav-link:hover {
+      color: #FFB400;
+    }
+
+    /* Mobile menu */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    /* Dropdown items styling */
+.dropdown-item {
+  color: #004C8C; /* default text color same as nav-link */
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-item:hover {
+  color: #FFB400; /* yellow on hover */
+  transform: translateY(-2px);
+}
+
+/* Agar navbar dark mode ya scrolled hai */
+.navbar.scrolled .dropdown-item:hover {
+  color: #FFB400;
+}
+
+    /* Ensure all media (images/videos) have same height and cover */
+  .gallery-item .card {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .gallery-item img,
+  .gallery-item video {
+    width: 100%;
+    height: 250px; /* Fixed height, adjust as needed */
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Optional: hover zoom effect */
+  .gallery-item img:hover,
+  .gallery-item video:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  </style>
+  </head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top animate_animated animate_fadeInDown">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Valorol.png" alt="Valorol Logo" height="100px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+
+        <!-- Product Dropdown -->
+        <li class="nav-item dropdown hover-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown">
+            Product
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productDropdown">
+            <li><a class="dropdown-item" href="product1.html">Acetone</a></li>
+            <li><a class="dropdown-item" href="product2.html">Methanol</a></li>
+            <li><a class="dropdown-item" href="product3.html">Dichloromethane</a></li>
+            <li><a class="dropdown-item" href="product4.html">Isopropyl Alcohol</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="COA.html">COA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CSS for hover -->
+<style>
+  /* Hover dropdown only for desktop */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+<!-- Custom JS for hover dropdown -->
+<script>
+  const dropdown = document.getElementById('productDropdownHover');
+  dropdown.addEventListener('mouseenter', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.show();
+  });
+  dropdown.addEventListener('mouseleave', function() {
+    const menu = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'));
+    menu.hide();
+  });
+</script>
+
+<!-- ====== ABOUT HERO SECTION ====== -->
+<!-- ====== HERO (video background with fallback) ====== -->
+<section id="about-hero"
+         class="position-relative text-center d-flex align-items-center justify-content-center overflow-hidden"
+         style="height:70vh; color:white; font-family:'Poppins',sans-serif;
+                /* keep a fallback background image in case video fails */
+                background: linear-gradient(rgba(0,73,144,0.6), rgba(0,73,144,0.6)),
+                             center/cover no-repeat;">
+  <!-- Background video (absolute, covers container) -->
+  <video autoplay muted loop playsinline 
+         class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;">
+    <source src="images/4.mp4" type="video/mp4">
+    <!-- optional webm fallback -->
+    <!-- <source src="videos/valorol-hero.webm" type="video/webm"> -->
+    <!-- fallback text -->
+  </video>
+
+  <!-- Dark overlay for readability -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,73,144,0.55); z-index:1;"></div>
+
+  <!-- Content (on-top) -->
+  <div class="container position-relative" data-aos="fade-up" style="z-index:2;">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb justify-content-center mb-0" style="background:transparent;">
+        <li class="breadcrumb-item"><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item active text-warning" aria-current="page">About</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Content -->
+    <h1 class="display-5 fw-bold mb-2">About <span style="color:#FFC72C;">Valorol</span></h1>
+    <p class="lead mb-0 fw-light">Driven by Science. Trusted by Industries.</p>
+  </div>
+
+  <!-- Bottom fade (keeps transition to next section smooth) -->
+  <div class="position-absolute bottom-0 start-0 w-100" 
+       style="height:100px; background:linear-gradient(to top,rgba(255,255,255,0.95),transparent); z-index:1;">
+  </div>
+</section>
+
+<!-- ====== OUR STORY / WHO WE ARE ====== -->
+<section id="our-story" class="py-5 bg-light" style="font-family:'Poppins',sans-serif;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Image -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+  <video id="myVideo" src="images/5.mp4" autoplay loop muted playsinline
+       class="img-fluid rounded-4 shadow-lg"
+       style="width:100%; height:auto; object-fit:cover;">
+</video>
+
+  <script>
+  const video = document.getElementById('myVideo');
+  video.playbackRate = 0.5; // 0.5 = half speed, 1 = normal, 2 = double speed
+</script>
+</div>
+
+      <!-- Right: Content -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <h2 class="fw-bold mb-3 text-primary">A Legacy of <span style="color:#FFC72C;">Chemical Excellence</span></h2>
+        <p class="text-secondary mb-3">
+          <strong>Cognizant Chemical Pvt. Ltd. (CCPL)</strong> is a pioneer in high-purity chemical manufacturing, 
+          dedicated to developing sustainable solutions that meet international pharmacopeia standards.
+        </p>
+        <p class="text-secondary">
+          Our flagship brand, <strong>Valorol™</strong>, symbolizes innovation, safety, and trust across industries — 
+          from pharmaceuticals to coatings — serving partners worldwide with consistency and precision.
+        </p>
+
+        <!-- Stats -->
+        <div class="row text-center mt-4">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="p-3 border rounded-3 bg-white shadow-sm h-100">
+              <i class="fas fa-flask fs-2 text-primary mb-2"></i>
+              <h6 class="fw-semibold mb-0">10+ Years</h6>
+              <small class="text-muted">of Experience</small>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="p-3 border rounded-3 bg-white shadow-sm h-100">
+              <i class="fas fa-globe fs-2 text-primary mb-2"></i>
+              <h6 class="fw-semibold mb-0">5+ Countries</h6>
+              <small class="text-muted">Served</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded-3 bg-white shadow-sm h-100">
+              <i class="fas fa-industry fs-2 text-primary mb-2"></i>
+              <h6 class="fw-semibold mb-0">State-of-the-Art</h6>
+              <small class="text-muted">Manufacturing</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== OUR TEAM SECTION (FIXED IMAGE SIZE) ======
+<section id="our-team" class="py-5" style="font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%);">
+  <div class="container" data-aos="fade-up"> -->
+
+    <!-- Section Title -->
+    <!-- <div class="text-center mb-5"> -->
+      <!-- <h2 class="fw-bold display-6" style="color:#004990;">Our <span style="color:#FFC72C;">Team</span></h2>
+      <div class="mx-auto mt-3" style="width:90px; height:3px; background-color:#FFC72C; border-radius:2px;"></div>
+      <p class="text-muted mt-3">The people who drive Valorol’s innovation, integrity, and excellence.</p> -->
+    <!-- </div> -->
+
+    <!-- Team Members -->
+    <!-- <div class="row g-5">
+
+      Member 1 -->
+      <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/Sir.jpeg" alt="Team Member 1">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Venkatesh Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">CEO/Directorr</p>
+            <p class="small text-secondary mb-0">
+              With over 20 years in the chemical industry, he leads Valorol’s strategic vision and global expansion.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Member 2 -->
+      <!-- <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/rupesh.jpeg" alt="Team Member 2">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Rupesh Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">Managing Director</p>
+            <p class="small text-secondary mb-0">
+              Ensuring seamless manufacturing and logistics with a focus on safety, quality, and sustainability.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Member 3 -->
+      <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/Pravin.jpeg" alt="Team Member 3">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr. Pravin Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">---</p>
+            <p class="small text-secondary mb-0">
+              Driving innovation through advanced chemical formulations and precision process optimization.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Member 4 -->
+      <!-- <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/Arjavi.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mrs. Aarjavi Mudliar</h5>
+            <p class="text-muted mb-2 fw-semibold">Sales Head</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Member 4 -->
+      <!-- <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/adnan.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mrs. Sayyed Adnan</h5>
+            <p class="text-muted mb-2 fw-semibold">IT Support</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Member 4 -->
+      <!-- <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400"> -->
+        <!-- <div class="d-flex align-items-center shadow-lg rounded-4 p-4 bg-white team-card">
+          <div class="team-img me-4">
+            <img src="images/azr.jpeg" alt="Team Member 4">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1" style="color:#004990;">Mr Sayyed Anzar</h5>
+            <p class="text-muted mb-2 fw-semibold">IT Support</p>
+            <p class="small text-secondary mb-0">
+              Overseeing every batch to ensure unmatched purity and compliance with BP and USP standards.
+            </p>
+          </div>
+        </div> -->
+      <!-- </div>
+
+    </div>
+  </div>  -->
+
+  <!-- Custom Styles -->
+  <!-- <style>
+    .team-card {
+      transition: all 0.4s ease;
+      border: 1px solid transparent;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: #FFC72C;
+      box-shadow: 0 8px 25px rgba(0, 73, 144, 0.15);
+    }
+    .team-img {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+    }
+    .team-card:hover .team-img img {
+      transform: scale(1.08);
+    }
+    @media (max-width: 768px) {
+      .team-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .team-img {
+        margin-bottom: 15px;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
+
+
+</section>  -->
+
+<!-- ====== MEET OUR LEADERSHIP SECTION ====== -->
+<!-- <section class="py-5 bg-light" id="leadership" style="font-family:'Poppins', sans-serif;">
+  <div class="container" data-aos="fade-up"> -->
+
+    <!-- Section Header -->
+    <!-- <div class="text-center mb-5">
+      <h2 class="fw-bold display-6" style="color:#004990;">
+        Meet Our <span style="color:#FFC72C;">Leadership</span>
+      </h2> -->
+
+      <!-- small underline -->
+      <!-- <div style="width:120px; height:4px; background:#004990; margin:10px auto 20px; border-radius:2px;"></div>
+
+      <p class="text-secondary fs-5 fst-italic">
+        Visionaries driving Valorol™ — where science, sustainability, and trust converge.
+      </p>
+    </div>
+
+    <div class="row align-items-center"> -->
+      
+      <!-- Left Column: Portrait -->
+      <!-- <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-right">
+  <img src="images/RUPESH.jpeg" 
+       class="img-fluid shadow-lg rounded-4 border border-3"
+       style="border-color:#000000 !important; border-style:solid; width:85%; max-width:300px; transition:0.4s ease; box-shadow:0 8px 25px rgba(0,0,0,0.35);"
+       alt="Leadership Portrait">
+</div> -->
+
+
+      <!-- Right Column: Bio -->
+      <!-- <div class="col-md-8" data-aos="fade-left">
+        <p><strong>Leadership Vision:</strong> Empowering industries through innovation, purity, and sustainable chemical solutions that redefine quality standards globally.</p>
+        <p><strong>Our Journey:</strong> Under the leadership of <strong>Cognizant Chemical Pvt. Ltd.</strong>, Valorol™ continues to pioneer excellence in high-purity solvent manufacturing — driven by science and guided by integrity.</p>
+        <p><strong>Commitment to Growth:</strong> With decades of expertise, our leadership focuses on expanding Valorol’s reach to global markets, ensuring compliance, innovation, and long-term sustainability in every batch we produce.</p>
+        <p><strong>Our Philosophy:</strong> "Building a cleaner, safer, and sustainable tomorrow — one molecule at a time."</p> -->
+
+        <!-- Milestone Cards -->
+        <!-- <div class="row mt-4 g-3 justify-content-center">
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card shadow-sm h-100 text-center border-2" style="border-color:#004990;">
+              <div class="card-body py-3 px-2">
+                <i class="fas fa-users mb-2" style="color:#004990; font-size:28px;"></i>
+                <h6 class="fw-semibold small">Global Team</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card shadow-sm h-100 text-center border-2" style="border-color:#FFC72C;">
+              <div class="card-body py-3 px-2">
+                <i class="fas fa-globe mb-2" style="color:#FFC72C; font-size:28px;"></i>
+                <h6 class="fw-semibold small">20+ Countries</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card shadow-sm h-100 text-center border-2" style="border-color:#004990;">
+              <div class="card-body py-3 px-2">
+                <i class="fas fa-flask mb-2" style="color:#004990; font-size:28px;"></i>
+                <h6 class="fw-semibold small">Innovation Lead</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section> -->
+<section class="py-5 bg-light" id="leadership" style="font-family:'Poppins', sans-serif;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6" style="color:#004990;">
+        Meet Our <span style="color:#FFC72C;">Leadership</span>
+      </h2>
+      <div style="width:120px; height:4px; background:#004990; margin:10px auto 20px; border-radius:2px;"></div>
+      <p class="text-secondary fs-5 fst-italic">
+        Visionaries driving Valorol™ — where science, sustainability, and trust converge.
+      </p>
+    </div>
+
+    <div class="row g-5 justify-content-center align-items-center">
+
+      <!-- Person 1 -->
+      <div class="col-lg-6 col-md-6 col-12" data-aos="fade-right">
+        <div class="d-flex flex-column flex-md-row align-items-center">
+          <div class="text-center mb-3 mb-md-0 me-md-4">
+            <img src="images/Sir.jpeg"
+                 class="img-fluid shadow-lg rounded-4 border border-3 leadership-img"
+                 alt="Leadership Portrait 1">
+          </div>
+          <div class="text-center text-md-start">
+            <h5 class="fw-bold text-primary">Mr. Venkatesan Mudliar</h5>
+            <p><strong>Role:</strong> CEO/Director</p>
+            <p><strong>Vision:</strong> Streamlining production and quality assurance to maintain excellence across all Valorol™ products.</p>
+            <p><strong>Commitment:</strong> Ensuring operational efficiency, innovation, and sustainable practices in every process we implement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Person 2 -->
+      <div class="col-lg-6 col-md-6 col-12" data-aos="fade-left">
+        <div class="d-flex flex-column flex-md-row align-items-center">
+          <div class="text-center mb-3 mb-md-0 me-md-4">
+            <img src="images/rupesh.jpeg"
+                 class="img-fluid shadow-lg rounded-4 border border-3 leadership-img"
+                 alt="Leadership Portrait 2">
+          </div>
+          <div class="text-center text-md-start">
+            <h5 class="fw-bold text-primary">Rupesh Mudliar</h5>
+            <p><strong>Role:</strong> Managing Director</p>
+            <p><strong>Vision:</strong> Empowering industries through innovation, purity, and sustainable chemical solutions that redefine quality standards globally.</p>
+            <p><strong>Commitment:</strong> Leading Valorol™ to global markets while ensuring compliance, innovation, and long-term sustainability in every batch we produce.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ✅ Responsive Image Fix */
+  .leadership-img {
+    border-color: #000000;
+    object-fit: cover;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    width: 280px;
+    transition: 0.4s ease;
+    filter: grayscale(100%);
+  }
+
+  /* 📱 Mobile Optimization */
+  @media (max-width: 768px) {
+    .leadership-img {
+      width: 500px;
+      height: 350px;
+      max-width: 100%;
+    }
+  }
+</style>
+
+
+
+
+<!-- ====== OUR VISION & MISSION SECTION ====== -->
+<section class="py-5" style="background:linear-gradient(135deg, #f8f9fa 0%, #eaf3ff 100%); font-family:'Poppins', sans-serif;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6" style="color:#004990;">
+        Our <span style="color:#FFC72C;">Vision</span> & <span style="color:#FFC72C;">Mission</span>
+      </h2>
+      <div style="width:90px; height:4px; background:#004990; margin:10px auto; border-radius:10px;"></div>
+      <p class="text-secondary mt-3 fs-5 fst-italic">
+        Shaping a sustainable future with innovation, purity, and trust.
+      </p>
+    </div>
+
+    <div class="row g-4 align-items-center justify-content-center">
+      <!-- Vision Box -->
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="card shadow-lg border-0 rounded-4 h-100 p-4 position-relative overflow-hidden"
+             style="background:#fff; transition:transform 0.4s ease;">
+          <div class="position-absolute top-0 start-0 w-100 h-100" 
+               style="background:linear-gradient(135deg, rgba(0,73,144,0.1), rgba(255,199,44,0.05)); z-index:0;">
+          </div>
+          <div class="position-relative text-center" style="z-index:1;">
+            <div class="mb-4">
+              <i class="fas fa-eye" style="font-size:48px; color:#004990;"></i>
+            </div>
+            <h4 class="fw-bold mb-3" style="color:#004990;">Our Vision</h4>
+            <p class="text-muted">
+              To lead the chemical manufacturing industry with innovation and sustainability, 
+              delivering products that redefine global standards of purity and excellence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Box -->
+      <div class="col-md-5" data-aos="fade-left" data-aos-delay="200">
+        <div class="card shadow-lg border-0 rounded-4 h-100 p-4 position-relative overflow-hidden"
+             style="background:#fff; transition:transform 0.4s ease;">
+          
+          <div class="position-relative text-center" style="z-index:1;">
+            <div class="mb-4">
+              <i class="fas fa-bullseye" style="font-size:48px; color:#FFC72C;"></i>
+            </div>
+            <h4 class="fw-bold mb-3" style="color:#004990;">Our Mission</h4>
+            <p class="text-muted">
+              To deliver trusted chemical solutions with integrity and innovation, 
+              empowering industries while ensuring a cleaner, safer, and sustainable tomorrow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🌆 Gallery Section -->
+<!-- <section id="gallery" class="py-5" style="background-color:#f5f5f5;">
+  <div class="container"> -->
+    <!-- Heading -->
+    <!-- <h2 class="text-center mb-3 animate__animated animate__fadeInDown">Our Gallery</h2>
+    <p class="text-center mb-4 animate__animated animate__fadeIn">
+      Explore our company's Factory, Office & Labs through images and videos.
+    </p> -->
+
+    <!-- Filter Buttons -->
+    <!-- <div class="text-center mb-4">
+      <button class="btn btn-outline-primary mx-1 filter-btn active" data-filter="all">All</button>
+      <button class="btn btn-outline-primary mx-1 filter-btn" data-filter="factory">Factory</button>
+      <button class="btn btn-outline-primary mx-1 filter-btn" data-filter="office">Office</button>
+      <button class="btn btn-outline-primary mx-1 filter-btn" data-filter="labs">Labs</button>
+    </div> -->
+
+    <!-- Media Grid -->
+    <!-- <div class="row g-4" id="gallery-grid"> -->
+      <!-- Example Items -->
+      <!-- <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside1.jpeg" class="card-img-top" alt="Factory 1">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <video class="card-img-top" muted loop autoplay playsinline>
+            <source src="images/outside2.jpeg" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="office">
+        <div class="card shadow-sm">
+          <img src="images/bg4.jpg" class="card-img-top" alt="Office 1">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="office">
+        <div class="card shadow-sm">
+          <video class="card-img-top" muted loop autoplay playsinline>
+            <source src="images/9.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="labs">
+        <div class="card shadow-sm">
+          <img src="images/bg2.jpg" class="card-img-top" alt="Labs 1">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="labs">
+        <div class="card shadow-sm">
+          <video class="card-img-top" muted loop autoplay playsinline>
+            <source src="images/7.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div> -->
+
+      <!-- Add more items here (they’ll be hidden initially) -->
+      <!-- <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside3.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside4.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside5.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside6.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/outside7.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/inside1.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/inside2.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/inside3.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/inside4.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+      <div class="col-md-4 gallery-item" data-category="factory">
+        <div class="card shadow-sm">
+          <img src="images/inside5.jpeg" class="card-img-top" alt="Factory 2">
+        </div>
+      </div>
+
+    </div> -->
+
+    <!-- View More Button -->
+    <!-- <div class="text-center mt-4">
+      <button id="viewMoreBtn" class="btn btn-warning px-4 fw-semibold rounded-pill shadow-sm">
+        View More
+      </button>
+    </div>
+  </div> -->
+</section>
+
+<!-- 🧠 SCRIPT -->
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryItems = document.querySelectorAll("#gallery-grid .gallery-item");
+    const viewMoreBtn = document.getElementById("viewMoreBtn");
+    const itemsToShow = 6; // show first 6 only
+
+    // Initially hide extra items 
+    galleryItems.forEach((item, index) => {
+      if (index >= itemsToShow) item.style.display = "none";
+    });
+
+    // Toggle view more / less
+    viewMoreBtn.addEventListener("click", () => {
+      const hiddenItems = Array.from(galleryItems).filter(item => item.style.display === "none");
+
+      if (hiddenItems.length > 0) {
+        // Show all
+        galleryItems.forEach(item => {
+          item.style.display = "block";
+          item.classList.add("animate__animated", "animate__fadeInUp");
+        });
+        viewMoreBtn.textContent = "View Less";
+      } else {
+        // Show only 6
+        galleryItems.forEach((item, index) => {
+          item.style.display = index < itemsToShow ? "block" : "none";
+        });
+        viewMoreBtn.textContent = "View More";
+      }
+    });
+  });
+</script>
+
+ 🌈 Optional CSS -->
+<!-- <style>
+  #gallery-grid .card {
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #gallery-grid .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  #viewMoreBtn:hover {
+    background-color: #ffb400 !important;
+    box-shadow: 0 6px 16px rgba(255,180,0,0.4);
+  }
+</style> -->
+
+
+
+
+
+<!-- CTA Section with Particle Background -->
+<section class="py-5 text-center text-white position-relative overflow-hidden" 
+         style="background: linear-gradient(135deg, #f0c448, #f0c448);">
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas" class="position-absolute top-0 start-0 w-100 h-100" style="z-index:0;"></canvas>
+
+  <div class="container position-relative" style="z-index:1;">
+  <h2 class="fw-bold animate__animated animate__fadeInDown" 
+      style="font-family: 'Poppins', sans-serif; font-size:2.5rem; color:#004990;">
+    Innovating Chemicals for a Safer Tomorrow
+  </h2>
+  <p class="mt-3 animate__animated animate__fadeInUp" 
+     style="font-size:1.1rem; font-family: 'Poppins', sans-serif; max-width:600px; margin:auto; color:#004990;">
+    Partner with our experts to develop high-quality chemical solutions that enhance safety and efficiency across industries.
+  </p>
+  <a href="contact.html" class="btn btn-light mt-4 animate__animated animate__zoomIn" 
+     style="padding: 0.75rem 2rem; font-weight:600; transition: transform 0.3s ease;">
+     Connect with Our Chemists
+  </a>
+</div>
+
+</section>
+
+
+
+<!-- ====== AOS CDN ====== -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
+
+
+
+<!-- Animate.css CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- Optional: Hover effect for button -->
+<style>
+  .btn-light:hover {
+    background-color: #ffffff;
+    color: #003366;
+    transform: scale(1.05);
+  }
+  /* Make canvas cover entire section */
+  #particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<!-- Particle.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("particle-canvas", {
+    fpsLimit: 60,
+    background: { color: "transparent" },
+    particles: {
+      number: { value: 50, density: { enable: true, area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3 },
+      size: { value: { min: 1, max: 3 } },
+      move: { enable: true, speed: 0.8, direction: "none", outModes: "out" }
+    },
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: false } },
+      modes: { repulse: { distance: 100, duration: 0.4 } }
+    },
+    detectRetina: true
+  });
+</script>
+
+<!-- Filter JS -->
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      galleryItems.forEach(item => {
+        if(filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- AOS Init -->
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+
+
+
+
+
+
+
+  <!-- Required JS -->
+ <!-- ✅ Only one Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ✅ AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+
+  <!-- Bootstrap JS -->
+
+  <script>
+    // Navbar color change on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+  <!-- ✅ Bootstrap JS Bundle -->
+
+  <!-- ✅ AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- ✅ Magnific Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <!-- ✅ Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+<br><br>
+<footer class="text-light pt-5"
+  style="background:linear-gradient(135deg,#002b5c 0%,#004990 100%); font-family:'Poppins',sans-serif;">
+  <div class="container">
+
+    <div class="row gy-4 text-center text-md-start">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <img src="images/Valorol.png" alt="Valorol Logo" class="mb-3 img-fluid" style="max-width:150px;">
+        <p class="text-light opacity-75 small">
+          Valorol™ by Cognizant Chemical Pvt. Ltd. is a trusted brand in pharmacopeia-grade solvents — ensuring
+          unmatched purity and performance across industries.
+        </p>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light fs-5 hover-gold"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Quick Links</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="aboutus.html" class="footer-link">About Us</a></li>
+          <li><a href="#products" class="footer-link">Product</a></li>
+          <li><a href="COA.html" class="footer-link">COA</a></li>
+          <li><a href="contactus.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Our Products</h5>
+        <ul class="list-unstyled mb-0 small">
+          <li><a class="footer-link" href="product1.html">Acetone</a></li>
+          <li><a class="footer-link" href="product2.html">Methanol</a></li>
+          <li><a class="footer-link" href="product3.html">Dichloromethane</a></li>
+          <li><a class="footer-link" href="product4.html">Isopropyl Alcohol</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Contact Us</h5>
+        <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
+        <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> admin@valorol.com</p>
+        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 9619662255   /   +91 9930272227</p>
+      </div>
+
+    </div>
+
+    <hr class="my-4" style="border-color:#ffffff33;">
+
+    <div class="text-center pb-3 small">
+      © <span id="year"></span> <strong>Valorol™</strong> | A Brand by Cognizant Chemical Pvt. Ltd. | All Rights
+      Reserved.
+    </div>
+  </div>
+
+  <style>
+    .footer-link {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: all .3s ease;
+    }
+
+    .footer-link:hover {
+      color: #FFC72C;
+      transform: translateX(4px);
+    }
+
+    .hover-gold:hover {
+      color: #FFC72C !important;
+      transform: scale(1.2);
+      transition: all .3s ease;
+    }
+
+    @media (max-width: 576px) {
+      footer img {
+        max-width: 120px;
+      }
+
+      footer p,
+      footer li,
+      footer a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+</html>

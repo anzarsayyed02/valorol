@@ -1,24 +1,34 @@
-<?php
-session_start();
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header('Location: index.php');
-    exit;
-}
-$username = htmlspecialchars($_SESSION['admin_username'] ?? 'Admin');
-$role = htmlspecialchars($_SESSION['admin_role'] ?? 'viewer');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Valorol COA Manager</title>
+    <title>Admin COA | Valorol COA Manager</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Require login: redirect to admin login if not authenticated -->
+    <script>
+        (async function(){
+            try {
+                const res = await fetch('api.php?action=whoami', { credentials: 'same-origin' });
+                if (res.status === 401) {
+                    window.location.href = 'index.php';
+                    return;
+                }
+                const json = await res.json();
+                if (!json.success || !json.user || !json.user.username) {
+                    window.location.href = 'index.php';
+                }
+            } catch (e) {
+                // On network or other errors, redirect to login as safe default
+                window.location.href = 'index.php';
+            }
+        })();
+    </script>
     <!-- Top Navigation -->
     <nav class="admin-nav">
         <div class="nav-inner">
@@ -34,33 +44,31 @@ $role = htmlspecialchars($_SESSION['admin_role'] ?? 'viewer');
             <div class="nav-actions">
                 <a href="../index.html" class="nav-btn" title="Home"><i class="bi bi-house-fill"></i><span class="nav-btn-label">Home</span></a>
                 <a href="../COA.html" class="nav-btn" title="COA"><i class="bi bi-file-earmark-text-fill"></i><span class="nav-btn-label">COA</span></a>
-                <button class="nav-btn" onclick="openPasswordModal()" title="Change Password"><i class="bi bi-key-fill"></i><span class="nav-btn-label">Password</span></button>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
                     <i class="bi bi-person-circle"></i>
-                    <span><?php echo $username; ?> (<?php echo $role; ?>)</span>
+                    <span>Admin</span>
                 </div>
                 <a href="logout.php" class="nav-btn nav-btn-logout" title="Sign Out">
                     <i class="bi bi-box-arrow-right"></i>
                     <span class="nav-btn-label">Sign Out</span>
                 </a>
             </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="admin-main">
-        <!-- Header Row -->
-        <div class="page-header">
-            <div>
-                <h1 class="page-title">COA Entries</h1>
-                <p class="page-subtitle">Manage your Certificate of Analysis documents</p>
             </div>
-            <button class="btn-primary-custom" onclick="openAddModal()">
-                <i class="bi bi-plus-lg"></i>
-                Add New COA
-            </button>
-        </div>
+        </nav>
+
+        <main class="admin-main">
+            <!-- Header Row -->
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">COA Entries</h1>
+                    <p class="page-subtitle">Manage your Certificate of Analysis documents</p>
+                </div>
+                <button class="btn-primary-custom" onclick="openAddModal()">
+                    <i class="bi bi-plus-lg"></i>
+                    Add New COA
+                </button>
+            </div>
 
         <!-- Stats Bar -->
         <div class="stats-bar" id="statsBar">
@@ -192,47 +200,6 @@ $role = htmlspecialchars($_SESSION['admin_role'] ?? 'viewer');
 
     <!-- Toast Notification -->
     <div class="toast-container" id="toastContainer"></div>
-
-    <!-- CHANGE PASSWORD MODAL -->
-    <div class="modal-overlay" id="passwordModal">
-        <div class="modal-box modal-box-sm">
-            <div class="modal-header-custom">
-                <h3>Change Password</h3>
-                <button class="modal-close" onclick="closePasswordModal()">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-            <form id="passwordForm">
-                <div class="modal-body-custom">
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="currentPassword">Current Password <span class="required">*</span></label>
-                            <input type="password" id="currentPassword" name="current_password" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="newPassword">New Password <span class="required">*</span></label>
-                            <input type="password" id="newPassword" name="new_password" required minlength="6">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="confirmPassword">Confirm New Password <span class="required">*</span></label>
-                            <input type="password" id="confirmPassword" name="confirm_password" required minlength="6">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer-custom">
-                    <button type="button" class="btn-cancel" onclick="closePasswordModal()">Cancel</button>
-                    <button type="submit" class="btn-save">
-                        <i class="bi bi-check-lg"></i>
-                        Update Password
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>

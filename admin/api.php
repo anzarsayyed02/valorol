@@ -6,16 +6,10 @@
  * Actions: list, add, edit, delete, change_password
  */
 
+// Require session/login for API access
 session_start();
 
-// ── Auth check (all actions require login) ──
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    http_response_code(401);
-    echo json_encode(['success' => false, 'message' => 'Unauthorized']);
-    exit;
-}
-
-require_once 'db.php';
+$usersFile = __DIR__ . '/users.json';
 
 // ── Paths ──
 $jsonFile = __DIR__ . '/../coa_data.json';
@@ -24,6 +18,13 @@ $uploadDir = __DIR__ . '/../assets/coa/';
 // Ensure upload directory exists
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0755, true);
+}
+
+// Require login for API access
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Unauthorized']);
+    exit;
 }
 
 // ── Helpers ──
@@ -63,6 +64,22 @@ function sendJson($payload, $code = 200) {
 // ── Route by action ──
 $action = $_POST['action'] ?? $_GET['action'] ?? '';
 
+// Helpers for users and roles
+function currentRole() {
+    return $_SESSION['admin_role'] ?? 'viewer';
+}
+
+function loadUsers($file) {
+    if (!file_exists($file)) return [];
+    $json = file_get_contents($file);
+    $data = json_decode($json, true);
+    return is_array($data) ? $data : [];
+}
+
+function saveUsers($file, $data) {
+    file_put_contents($file, json_encode(array_values($data), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
 switch ($action) {
 
     // ─────────────────────────────────────
@@ -77,6 +94,11 @@ switch ($action) {
     // ADD a new COA entry
     // ─────────────────────────────────────
     case 'add':
+        // role check: admin or editor
+        $role = currentRole();
+        if (!in_array($role, ['admin', 'editor'])) {
+            sendJson(['success' => false, 'message' => 'Forbidden: insufficient role'], 403);
+        }
         $product = sanitizeInput($_POST['product'] ?? '');
         $batch   = sanitizeInput($_POST['batch'] ?? '');
         $code    = sanitizeInput($_POST['code'] ?? '');
@@ -128,6 +150,11 @@ switch ($action) {
     // EDIT an existing COA entry
     // ─────────────────────────────────────
     case 'edit':
+        // role check: admin or editor
+        $role = currentRole();
+        if (!in_array($role, ['admin', 'editor'])) {
+            sendJson(['success' => false, 'message' => 'Forbidden: insufficient role'], 403);
+        }
         $id      = intval($_POST['id'] ?? 0);
         $product = sanitizeInput($_POST['product'] ?? '');
         $batch   = sanitizeInput($_POST['batch'] ?? '');
@@ -194,6 +221,11 @@ switch ($action) {
     // DELETE a COA entry
     // ─────────────────────────────────────
     case 'delete':
+        // role check: admin only
+        $role = currentRole();
+        if ($role !== 'admin') {
+            sendJson(['success' => false, 'message' => 'Forbidden: only admin can delete'], 403);
+        }
         $id = intval($_POST['id'] ?? 0);
 
         if ($id <= 0) {
@@ -225,7 +257,7 @@ switch ($action) {
         break;
 
     // ─────────────────────────────────────
-    // CHANGE admin password
+    // CHANGE PASSWORD (against users.json)
     // ─────────────────────────────────────
     case 'change_password':
         $currentPass = $_POST['current_password'] ?? '';
@@ -244,20 +276,36 @@ switch ($action) {
             sendJson(['success' => false, 'message' => 'New password must be at least 6 characters.'], 400);
         }
 
-        $adminId = $_SESSION['admin_id'];
-        $stmt = $pdo->prepare("SELECT password FROM admin_users WHERE id = ?");
-        $stmt->execute([$adminId]);
-        $user = $stmt->fetch();
+        $users = loadUsers($usersFile);
+        $adminId = intval($_SESSION['admin_id'] ?? 0);
+        $foundIdx = null;
+        foreach ($users as $i => $u) {
+            if (intval($u['id']) === $adminId) { $foundIdx = $i; break; }
+        }
 
-        if (!$user || !password_verify($currentPass, $user['password'])) {
+        if ($foundIdx === null) {
+            sendJson(['success' => false, 'message' => 'User not found.'], 404);
+        }
+
+        $user = $users[$foundIdx];
+        if (!password_verify($currentPass, $user['password'])) {
             sendJson(['success' => false, 'message' => 'Current password is incorrect.'], 403);
         }
 
-        $hashedNew = password_hash($newPass, PASSWORD_DEFAULT);
-        $stmt = $pdo->prepare("UPDATE admin_users SET password = ? WHERE id = ?");
-        $stmt->execute([$hashedNew, $adminId]);
-
+        $users[$foundIdx]['password'] = password_hash($newPass, PASSWORD_DEFAULT);
+        saveUsers($usersFile, $users);
         sendJson(['success' => true, 'message' => 'Password changed successfully.']);
+        break;
+
+    // ─────────────────────────────────────
+    // WHOAMI - return current user info
+    // ─────────────────────────────────────
+    case 'whoami':
+        sendJson(['success' => true, 'user' => [
+            'id' => $_SESSION['admin_id'] ?? null,
+            'username' => $_SESSION['admin_username'] ?? null,
+            'role' => $_SESSION['admin_role'] ?? null
+        ]]);
         break;
 
     // ─────────────────────────────────────

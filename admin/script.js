@@ -8,20 +8,45 @@
 let coaEntries = [];
 let editingId = null;
 let deletingId = null;
+let currentUser = null; // {id, username, role}
 
 // ── DOM References ──
 const coaTableBody = document.getElementById("coaTableBody");
 const totalCount = document.getElementById("totalCount");
 const searchInput = document.getElementById("searchInput");
 const coaForm = document.getElementById("coaForm");
-const passwordForm = document.getElementById("passwordForm");
 
 // ── Init ──
 document.addEventListener("DOMContentLoaded", () => {
-  loadEntries();
-  setupFileUpload();
-  setupSearch();
+  (async () => {
+    await loadUser();
+    await loadEntries();
+    setupFileUpload();
+    setupSearch();
+  })();
 });
+
+async function loadUser() {
+  try {
+    const res = await fetch('api.php?action=whoami');
+    const json = await res.json();
+    if (json.success) {
+      currentUser = json.user || null;
+      applyRoleUI();
+    }
+  } catch (err) {
+    // ignore; user may not be logged in
+  }
+}
+
+function applyRoleUI() {
+  const addBtn = document.querySelector('.btn-primary-custom');
+  const role = currentUser && currentUser.role ? currentUser.role : 'viewer';
+  if (addBtn) {
+    if (!['admin','editor'].includes(role)) addBtn.style.display = 'none';
+    else addBtn.style.display = '';
+  }
+}
 
 // ═══════════════════════════════════════
 // DATA LOADING
@@ -70,34 +95,35 @@ function renderTable(data) {
   }
 
   coaTableBody.innerHTML = data
-    .map(
-      (item, index) => `
+    .map((item, index) => {
+      const role = currentUser && currentUser.role ? currentUser.role : 'viewer';
+      const canEdit = ['admin', 'editor'].includes(role);
+      const canDelete = role === 'admin';
+      const fileName = item.file || '';
+      const displayFile = fileName.length > 25 ? fileName.substring(0, 25) + '...' : fileName;
+      const pdfHref = fileName ? `../assets/coa/${encodeURIComponent(fileName)}` : '#';
+
+      return `
     <tr>
       <td>${index + 1}</td>
-      <td class="td-product">${escapeHtml(item.product)}</td>
-      <td>${escapeHtml(item.batch)}</td>
-      <td>${escapeHtml(item.code)}</td>
+      <td class="td-product">${escapeHtml(item.product || '')}</td>
+      <td>${escapeHtml(item.batch || '')}</td>
+      <td>${escapeHtml(item.code || '')}</td>
       <td>
         <div class="td-file">
           <i class="bi bi-file-earmark-pdf-fill"></i>
-          <a href="../assets/coa/${encodeURIComponent(item.file)}" target="_blank" title="View PDF">
-            ${escapeHtml(item.file.length > 25 ? item.file.substring(0, 25) + "..." : item.file)}
-          </a>
+          ${fileName ? `<a href="${pdfHref}" target="_blank" title="View PDF">${escapeHtml(displayFile)}</a>` : '<span style="color:#9ca3af">No file</span>'}
         </div>
       </td>
       <td>
         <div class="action-group">
-          <button class="btn-action btn-action-edit" onclick="openEditModal(${item.id})" title="Edit">
-            <i class="bi bi-pencil-fill"></i>
-          </button>
-          <button class="btn-action btn-action-delete" onclick="openDeleteConfirm(${item.id})" title="Delete">
-            <i class="bi bi-trash3-fill"></i>
-          </button>
+          ${canEdit ? `<button class="btn-action btn-action-edit" onclick="openEditModal(${item.id})" title="Edit"><i class="bi bi-pencil-fill"></i></button>` : ''}
+          ${canDelete ? `<button class="btn-action btn-action-delete" onclick="openDeleteConfirm(${item.id})" title="Delete"><i class="bi bi-trash3-fill"></i></button>` : ''}
         </div>
       </td>
     </tr>
-  `
-    )
+  `;
+    })
     .join("");
 }
 
@@ -256,44 +282,35 @@ async function confirmDelete() {
   }
 }
 
-// ═══════════════════════════════════════
 // PASSWORD MODAL
-// ═══════════════════════════════════════
-
 function openPasswordModal() {
-  document.getElementById("currentPassword").value = "";
-  document.getElementById("newPassword").value = "";
-  document.getElementById("confirmPassword").value = "";
-  openModal("passwordModal");
+  const el = document.getElementById('currentPassword');
+  if (el) el.value = '';
+  const np = document.getElementById('newPassword'); if (np) np.value = '';
+  const cp = document.getElementById('confirmPassword'); if (cp) cp.value = '';
+  openModal('passwordModal');
 }
 
 function closePasswordModal() {
-  closeOverlay("passwordModal");
+  closeOverlay('passwordModal');
 }
 
-passwordForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+const passwordForm = document.getElementById('passwordForm');
+if (passwordForm) {
+  passwordForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(passwordForm);
+    formData.append('action','change_password');
+    try {
+      const res = await fetch('api.php',{method:'POST', body: formData});
+      const json = await res.json();
+      if (json.success) { showToast(json.message,'success'); closePasswordModal(); }
+      else showToast(json.message || 'Password change failed','error');
+    } catch (err) { showToast('Network error. Please try again.','error'); }
+  });
+}
 
-  const formData = new FormData(passwordForm);
-  formData.append("action", "change_password");
-
-  try {
-    const res = await fetch("api.php", {
-      method: "POST",
-      body: formData,
-    });
-    const json = await res.json();
-
-    if (json.success) {
-      showToast(json.message, "success");
-      closePasswordModal();
-    } else {
-      showToast(json.message || "Password change failed", "error");
-    }
-  } catch (err) {
-    showToast("Network error. Please try again.", "error");
-  }
-});
+// Password management removed (no admin login)
 
 // ═══════════════════════════════════════
 // FILE UPLOAD UI

@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorol | Home</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- 🎨 Font Awesome (Icons CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ✅ Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- ✅ Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <!-- ✅ AOS (Animate on Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- ✅ Magnific Popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    /* Floating logo animation */
+    @keyframes floatLogo {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /*about */
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 114, 188, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    .hover-card {
+      transition: all 0.4s ease;
+      border-top: 5px solid transparent;
+    }
+
+    .hover-card:hover {
+      transform: translateY(-10px);
+      border-top: 5px solid #0072BC;
+      box-shadow: 0 8px 25px rgba(0, 114, 188, 0.25);
+    }
+
+
+    .premium-circle {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, #ffffff 40%, #f1f1f1 100%);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 5px 20px rgba(255, 255, 255, 0.5);
+      position: relative;
+      overflow: hidden;
+      animation: floatEffect 5s ease-in-out infinite;
+      border: 6px solid #000;
+      /* 👈 Black outer border added */
+    }
+
+    /* Gradient ring effect (inner glow) */
+    .premium-circle::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      /* Adjusted for black border */
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #FFC72C, #004990);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    /* Floating animation */
+    @keyframes floatEffect {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+      </style>
+
+</head>
+
+<body>
+    <!-- ====== ABOUT VALOROL SECTION ====== -->
+  <section id="about" class="py-5" style="font-family:'Poppins',sans-serif; background-color:#f8faff;">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row align-items-center g-4">
+
+        <!-- Left: img -->
+        <div class="col-lg-6 text-center" data-aos="fade-right" data-aos-delay="100">
+          <div style="width: 100%; max-width: 420px; aspect-ratio: 1 / 1; margin: auto; ">
+            <img src="images/Valorol about.png" alt="Sustainability and Certifications"
+              class="img-fluid shadow border border-3"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border-color: #000;"
+              data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+
+          </div>
+        </div>
+
+
+
+        <!-- Right: Content -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="fw-bold mb-3" style="color:#004990;">About <span style="color:#FFC72C;">Valorol™</span></h2>
+          <p class="lead mb-3 text-secondary">
+            <strong>Valorol™</strong> is the flagship trademark brand of <strong>Cognizant Chemical Pvt. Ltd.</strong>,
+            registered under Class 5 for <em>Medicinal and Pharmaceutical Preparations</em>.
+            It represents CCPL’s legacy of quality, innovation, and regulatory excellence.
+          </p>
+          <p class="text-secondary mb-4">
+            Engineered for <strong>purity, performance, and precision</strong>, Valorol™ embodies a future-forward
+            vision of sustainable chemical manufacturing. From research to formulation, every batch adheres
+            to global pharmacopeia standards — ensuring consistent quality for critical pharmaceutical applications.
+          </p>
+
+          <!-- Core Attributes -->
+          <div class="row g-3 mt-3">
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100 text-center p-4 hover-effect">
+                <i class="fas fa-flask fs-2 mb-3" style="color:#004990;"></i>
+                <h6 class="fw-semibold" style="color:#004990;">Advanced Formulation</h6>
+                <!-- <p class="small text-muted mb-0">Innovation-led product development</p> -->
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100 text-center p-4 hover-effect">
+                <i class="fas fa-certificate fs-2 mb-3" style="color:#FFC72C;"></i>
+                <h6 class="fw-semibold" style="color:#004990;">Pharma-Grade Quality</h6>
+                <!-- <p class="small text-muted mb-0">International compliance & certification</p> -->
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100 text-center p-4 hover-effect">
+                <i class="fas fa-leaf fs-2 mb-3" style="color:#004990;"></i>
+                <h6 class="fw-semibold" style="color:#004990;">Sustainability Focused</h6>
+                <!-- <p class="small text-muted mb-0">Eco-conscious, future-ready processes</p> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Trademark Footnote -->
+          <div class="mt-4">
+            <p class="small text-muted fst-italic">
+              Trademark Application No. <strong>12408000</strong> under Class 5 — filed by
+              <strong>Cognizant Chemical Pvt. Ltd.</strong> with IP India.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hover Effect -->
+    <style>
+      .hover-effect {
+        transition: all 0.35s ease;
+        border-top: 3px solid transparent;
+        background-color: #fff;
+      }
+
+      .hover-effect:hover {
+        transform: translateY(-6px);
+        border-top: 3px solid #FFC72C;
+        box-shadow: 0 10px 25px rgba(0, 73, 144, 0.15);
+      }
+    </style>
+  </section>
+
+  <!-- ====== OWNERSHIP SECTION ====== -->
+  <section id="ownership" class="py-5"
+    style="background:linear-gradient(180deg,#f8f9fb 0%,#e9f2fa 100%); font-family:'Poppins',sans-serif;">
+    <div class="container text-center">
+
+      <!-- Section Heading -->
+      <div data-aos="fade-down" data-aos-duration="1000" class="mb-5">
+        <h2 class="fw-bold mb-3" style="color:#004990;">
+          Cognizant Chemical Pvt Ltd <span style="color:#FFC72C;">Owns Valorol™</span>
+        </h2>
+        <span style="
+        display:block;
+        width:100px;
+        height:4px;
+        border-radius:5px;
+        margin:10px auto 20px;
+        background:linear-gradient(90deg,#FFC72C,#FFD84D);
+        box-shadow:0 2px 6px rgba(0,0,0,0.15);
+      "></span>
+        <p class="text-secondary mb-4">
+          Our legacy of innovation continues through our flagship brand Valorol™, setting new benchmarks
+          in pharmacopeia-grade solvent manufacturing.
+        </p>
+      </div>
+
+      <!-- Card Row -->
+      <div class="row g-4 justify-content-center">
+
+        <!-- CCPL Card -->
+        <div class="col-md-5" data-aos="fade-right" data-aos-duration="1000">
+          <div class="card border-0 shadow-lg rounded-4 h-100 p-4"
+            style="transition:all .4s; border:2px solid #004990;">
+            <div class="card-body text-center">
+              <div class="icon-circle mb-4 mx-auto d-flex align-items-center justify-content-center"
+                style="width:80px; height:80px; background:#ffffff; border-radius:50%; overflow:hidden;">
+                <img src="images/CCPL_Logo.png" alt="Valorol Logo" style="width:80px; height:60px; object-fit:contain;">
+              </div>
+
+              <h4 class="fw-bold mb-2" style="color:#004990;">Cognizant Chemical Pvt Ltd</h4>
+              <p class="text-secondary mb-3" style="font-size:0.95rem;">
+                Established in 2016, CCPL is a leading manufacturer of pharmacopeia-grade solvents serving
+                pharmaceutical, agrochemical, and electronic industries across India.
+              </p>
+              <a href="https://cognizantchemical.com" target=_blank
+                class="btn btn-outline-primary rounded-pill px-4 mt-2"
+                style="border-color:#004990; color:#004990; transition:all .3s;">
+                Learn More <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Valorol Card -->
+        <div class="col-md-5" data-aos="fade-left" data-aos-duration="1000">
+          <div class="card border-0 shadow-lg rounded-4 h-100 p-4"
+            style="transition:all .4s; border:2px solid #FFC72C;">
+            <div class="card-body text-center">
+              <div class="icon-circle mb-4 mx-auto d-flex align-items-center justify-content-center"
+                style="width:80px; height:80px; background:#ffffff; border-radius:50%; overflow:hidden;">
+                <img src="images/Valorol.png" alt="Valorol Logo" style="width:60px; height:60px; object-fit:contain;">
+              </div>
+              <h4 class="fw-bold mb-2">
+                <span style="color:#FFC72C; ;">Valorol™</span> - A Brand by
+                <span style="color:#004990;">CCPL</span>
+              </h4>
+
+              <p class="text-secondary mb-3" style="font-size:0.95rem;">
+                Valorol™ stands as CCPL’s premium brand, offering globally certified solvents adhering to IP, BP, EP,
+                JP, and USP/NF standards — trusted by industries worldwide.
+              </p>
+              <a href="aboutus.html" target="_blank" class="btn rounded-pill px-4 mt-2 custom-btn-outline">
+                Explore Valorol <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+
+              <style>
+                .custom-btn-outline {
+                  border: 2px solid #FFC72C;
+                  /* Yellow border */
+                  color: #FFC72C;
+                  /* Yellow text */
+                  background: transparent;
+                  transition: all 0.3s ease;
+                }
+
+                .custom-btn-outline:hover {
+                  background: #FFC72C;
+                  /* Yellow background on hover */
+                  color: #FFC72C;
+                  /* Yellow text on hover */
+                  border-color: #FFC72C;
+                  /* Keep border yellow */
+                  text-decoration: none;
+                }
+              </style>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Hover Animation -->
+    <script>
+      document.querySelectorAll('#ownership .card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-6px)';
+          card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
+          card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        });
+      });
+
+      // Button Hover Color Change
+      document.querySelectorAll('#ownership .btn-outline-primary').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          btn.style.backgroundColor = '#004990';
+          btn.style.color = '#fff';
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.backgroundColor = 'transparent';
+          btn.style.color = '#004990';
+        });
+      });
+    </script>
+  </section>
+
+  <!-- ====== VALOROL PRODUCT RANGE ====== -->
+  <!-- ====== VALOROL PRODUCT RANGE ====== -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+
+  <section id="products" class="py-5 text-center" style="font-family:'Poppins',sans-serif;background-color:#f8f9fb;">
+    <div class="container" data-aos="fade-up">
+      <h2 class="fw-bold mb-4" style="color:#004990;">
+        Valorol <span style="color:#FFC72C;">Product Range</span>
+      </h2>
+      <p class="text-secondary mb-5">Explore our specialized formulations developed with precision and purity.</p>
+
+      <!-- Category Buttons -->
+      <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
+        <button class="btn btn-outline-primary rounded-pill active" style="border-color:#004990;color:#004990;"
+          onclick="showCategory('acetone',this)">Acetone</button>
+        <button class="btn btn-outline-primary rounded-pill" style="border-color:#004990;color:#004990;"
+          onclick="showCategory('Methanol',this)">Methanol</button>
+        <button class="btn btn-outline-primary rounded-pill" style="border-color:#004990;color:#004990;"
+          onclick="showCategory('dcm',this)">Dichloromethane</button>
+        <button class="btn btn-outline-primary rounded-pill" style="border-color:#004990;color:#004990;"
+          onclick="showCategory('ipa',this)">Isopropyl Alcohol</button>
+        <button class="btn btn-outline-primary rounded-pill" style="border-color:#004990;color:#004990;"
+          onclick="showCategory('jp',this)">Other</button>
+
+      </div>
+
+      <!-- Product Cards -->
+      <div id="product-section" class="row g-4 justify-content-center"></div>
+    </div>
+  </section>
+
+
+  <script>
+    const products = {
+      acetone: [
+        {
+          name: "Acetone Range",
+          grades: ["BP", "EP", "USP", "NF", "Domestic"],
+          detail: "High-purity acetone suitable for pharma and lab applications.",
+          image: "images/icon1.gif",
+          link: "product1.html"  // <-- unique page
+        },
+        {
+          name: "Acetone Premium",
+          grades: ["BP", "EP", "USP/NF", "Export"],
+          detail: "Export-grade acetone known for stability and purity.",
+          image: "images/icon2.gif",
+          link: "product1.html"
+        },
+        {
+          name: "Acetone Industrial",
+          grades: ["BP", "EP", "Domestic", "Lab Grade"],
+          detail: "Industrial quality acetone for manufacturing and research.",
+          image: "images/icon3.gif",
+          link: "product1.html"
+        }
+      ],
+      dcm: [
+        {
+          name: "Dichloromethane Range",
+          grades: ["BP", "EP", "USP/NF", "Domestic"],
+          detail: "DCM ideal for extraction and purification processes.",
+          image: "images/icon4.gif",
+          link: "product2.html"
+        },
+        {
+          name: "Dichloromethane Premium",
+          grades: ["BP", "EP", "USP/NF", "Export"],
+          detail: "Premium DCM for high-end chemical synthesis.",
+          image: "images/icon5.gif",
+          link: "product2.html"
+        }
+      ],
+      ipa: [
+        {
+          name: "Isopropyl Alcohol Range",
+          grades: ["BP", "EP", "USP", "NF", "Domestic"],
+          detail: "Multipurpose IPA used in medical, cleaning and lab work.",
+          image: "images/icon6.gif",
+          link: "product3.html"
+        },
+        {
+          name: "Isopropyl Alcohol Premium",
+          grades: ["BP", "EP", "USP/NF", "Export"],
+          detail: "High-grade IPA suitable for export and sensitive uses.",
+          image: "images/icon7.gif",
+          link: "product3.html"
+        }
+      ],
+      jp: [
+        {
+          name: "Isopropyl Alcohol JP/IP Range",
+          grades: ["JP", "IP", "Domestic", "Export"],
+          detail: "Certified JP/IP grade IPA for regulated industries.",
+          image: "images/icon8.gif",
+          link: "product3.html"
+        }
+      ],
+      Methanol: [
+        {
+          name: "Methanol",
+          grades: ["JP", "IP", "Domestic", "Export"],
+          detail: "Certified JP/IP grade IPA for regulated industries.",
+          image: "images/icon9.gif",
+          link: "product3.html"
+        }
+      ]
+    };
+
+    function showCategory(category, btn) {
+      document.querySelectorAll('.btn-outline-primary').forEach(b => {
+        b.classList.remove('active');
+        b.style.backgroundColor = 'transparent';
+        b.style.color = '#004990';
+      });
+      btn.classList.add('active');
+      btn.style.backgroundColor = '#004990';
+      btn.style.color = '#fff';
+
+      const section = document.getElementById('product-section');
+      section.innerHTML = '';
+
+      products[category].forEach(p => {
+        const badges = p.grades.map(g =>
+          `<span class="badge me-1 mb-1" style="background-color:#004990;color:#fff;">${g}</span>`
+        ).join('');
+
+        section.innerHTML += `
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 shadow-lg h-100 p-4 position-relative overflow-hidden"
+               style="border-radius:20px; transition:all .3s ease; background:rgba(255,255,255,0.9);">
+            <div class="text-center mb-3">
+              <img src="${p.image}" alt="${p.name}" style="width:80px;height:80px;object-fit:contain;">
+            </div>
+            <h5 class="fw-semibold text-dark mb-2">${p.name}</h5>
+            <p class="text-muted small mb-3">${p.detail}</p>
+            <div class="mb-3">${badges}</div>
+            <a href="${p.link}" class="btn rounded-pill px-3 py-2"
+   style="border-color:#004990;color:#004990;border:1px solid #004990;transition:0.3s;">
+   Know More <i class="fas fa-arrow-right ms-1"></i>
+</a>
+
+          </div>
+        </div>`;
+      });
+
+      // Hover animation for cards
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseover', () => {
+          card.style.transform = 'translateY(-8px)';
+          card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+        card.addEventListener('mouseout', () => {
+          card.style.transform = 'translateY(0)';
+          card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
+        });
+      });
+
+      // Button hover effect
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mouseover', () => {
+          btn.style.backgroundColor = '#004990';
+          btn.style.color = '#fff';
+        });
+        btn.addEventListener('mouseout', () => {
+          if (!btn.classList.contains('active')) {
+            btn.style.backgroundColor = 'transparent';
+            btn.style.color = '#004990';
+          }
+        });
+      });
+    }
+
+    // Initialize first category
+    showCategory('acetone', document.querySelector('.btn-outline-primary'));
+  </script>
+
+  <!-- ====== INDUSTRIES WE SERVE ====== -->
+  <section id="industries" class="py-5"
+    style="font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#f8f9fb 0%,#e9f2fa 100%);">
+    <div class="container text-center" data-aos="fade-up">
+
+      <!-- Title -->
+      <h2 class="fw-bold mb-3 position-relative d-inline-block" style="color:#004990;">
+        Industries <span style="color:#FFC72C;">We Serve</span>
+        <span style="
+        display:block;
+        width:80px;
+        height:4px;
+        border-radius:5px;
+        margin:10px auto 0;
+        background:linear-gradient(90deg,#FFC72C,#FFD84D);
+        box-shadow:0 2px 5px rgba(0,0,0,0.15);
+      "></span>
+      </h2>
+
+      <p class="text-secondary mb-5">Valorol products play a vital role across diverse sectors — ensuring purity,
+        safety, and performance.</p>
+
+      <!-- Industry Grid -->
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-pills fa-3x mb-3" style="color:#004990;"></i>
+              <h5 class="fw-semibold mb-2">Pharmaceuticals</h5>
+              <p class="text-secondary small mb-0">Used in manufacturing high-purity active ingredients and solvents.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-seedling fa-3x mb-3" style="color:#FFC72C;"></i>
+              <h5 class="fw-semibold mb-2">Agrochemicals</h5>
+              <p class="text-secondary small mb-0">Ensuring quality formulations for fertilizers, pesticides, and
+                adjuvants.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-vial fa-3x mb-3" style="color:#004990;"></i>
+              <h5 class="fw-semibold mb-2">Laboratories & R&D</h5>
+              <p class="text-secondary small mb-0">Trusted solvents for precision testing, synthesis, and research
+                applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-paint-roller fa-3x mb-3" style="color:#FFC72C;"></i>
+              <h5 class="fw-semibold mb-2">Paints & Coatings</h5>
+              <p class="text-secondary small mb-0">Enhancing texture, drying, and finish for industrial coatings and
+                resins.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-spa fa-3x mb-3" style="color:#004990;"></i>
+              <h5 class="fw-semibold mb-2">Cosmetics & Personal Care</h5>
+              <p class="text-secondary small mb-0">Used in formulations for perfumes, sanitizers, and skincare products.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="card border border-2 shadow h-100 p-4 transition"
+            style="border-color:black; border-radius:15px; transition:all .3s;">
+            <div class="mb-3 text-center">
+              <i class="fas fa-industry fa-3x mb-3" style="color:#FFC72C;"></i>
+              <h5 class="fw-semibold mb-2">Industrial Manufacturing</h5>
+              <p class="text-secondary small mb-0">Reliable chemical base for large-scale production and process
+                industries.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Animation & Hover Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+      document.querySelectorAll('#industries .card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-6px)';
+          card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
+          card.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+        });
+      });
+    </script>
+  </section>
+
+  <section id="sustainability" class="py-5"
+    style="font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#e9f2fa 0%,#f8f9fb 100%);">
+    <div class="container" data-aos="fade-up">
+      <div class="row align-items-center gy-4">
+
+        <!-- Left: Content -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="fw-bold mb-3" style="color:#004990;">
+            Sustainability & <span style="color:#FFC72C;">Certifications</span>
+          </h2>
+          <p class="text-secondary mb-4">
+            At <strong>Cognizant Chemical Pvt. Ltd.</strong>, sustainability isn’t just a choice — it’s a
+            responsibility.
+            Our processes are built around environmental safety, energy efficiency, and compliance with international
+            standards.
+            Valorol is produced in state-of-the-art facilities that prioritize purity, safety, and eco-conscious
+            manufacturing.
+          </p>
+
+          <!-- Certifications List -->
+          <ul class="list-unstyled">
+            <li class="mb-2" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-check-circle me-2" style="color:#FFC72C;"></i>
+              ISO 9001:2015 – Quality Management System
+            </li>
+            <li class="mb-2" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-check-circle me-2" style="color:#FFC72C;"></i>
+              ISO 14001:2015 – Environmental Management
+            </li>
+            <li class="mb-2" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-check-circle me-2" style="color:#FFC72C;"></i>
+              REACH & RoHS Compliant Manufacturing
+            </li>
+            <li class="mb-2" data-aos="fade-up" data-aos-delay="500">
+              <i class="fas fa-check-circle me-2" style="color:#FFC72C;"></i>
+              GMP-Certified Facilities for Consistent Product Quality
+            </li>
+            <li class="mb-2" data-aos="fade-up" data-aos-delay="600">
+              <i class="fas fa-check-circle me-2" style="color:#FFC72C;"></i>
+              FDA-Approved Processes for Global Compliance
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/Heat Flow Controls The Movement Of Skyrmions In An Insulating Magnet.jpg"
+            alt="Sustainability and Certifications" class="img-fluid rounded-4 shadow border border-2"
+            style="max-height:420px; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Certifications Logo Row -->
+    <div class="container mt-4">
+      <div class="row justify-content-center align-items-center text-center g-3">
+        <div class="col-4 col-md-2">
+          <img src="images/ISO.jpg" alt="ISO 9001" class="img-fluid" style="max-height:80px;">
+        </div>
+        <div class="col-4 col-md-2">
+          <img src="images/GMP.jpg" alt="GMP" class="img-fluid" style="max-height:80px;">
+        </div>
+        <div class="col-4 col-md-2">
+          <img src="images/FDA.jpg" alt="FDA" class="img-fluid" style="max-height:80px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="manufacturing" class="py-5"
+    style="font-family:'Poppins',sans-serif; background:linear-gradient(180deg,#e9f2fa 0%,#f8f9fb 100%);">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row align-items-center gy-4">
+        <!-- Left: Image/Video -->
+        <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+          <!-- Replace image with video if needed -->
+          <img src="images/outside4.jpeg" class="img-fluid rounded-4 shadow border border-2" style="height: 500px;"
+            alt="Chemical Manufacturing Facility">
+        </div>
+
+        <!-- Right: Content -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="fw-bold mb-3" style="color:#004990;">Manufacturing <span style="color:#FFC72C;">Excellence</span>
+          </h2>
+          <p class="text-secondary mb-4">
+            At <strong>Cognizant Chemical Pvt. Ltd.</strong>, we combine technology, precision, and passion to create
+            world-class chemical formulations.
+            Our facilities are designed for safety, quality, and sustainability — ensuring that every molecule meets
+            international standards of purity and consistency.
+          </p>
+
+          <div class="row g-3">
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="border border-2 rounded-4 p-3 text-center shadow-sm h-100">
+                <i class="fas fa-vial fa-2x mb-2" style="color:#004990;"></i>
+                <h6 class="fw-semibold mb-1">Modern Formulation Units</h6>
+                <p class="small text-secondary mb-0">Equipped with automated mixing and batch monitoring systems.</p>
+              </div>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="border border-2 rounded-4 p-3 text-center shadow-sm h-100">
+                <i class="fas fa-flask fa-2x mb-2" style="color:#FFC72C;"></i>
+                <h6 class="fw-semibold mb-1">R&D and Quality Labs</h6>
+                <p class="small text-secondary mb-0">Every batch is tested for stability, purity, and performance.</p>
+              </div>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="border border-2 rounded-4 p-3 text-center shadow-sm h-100">
+                <i class="fas fa-seedling fa-2x mb-2" style="color:#004990;"></i>
+                <h6 class="fw-semibold mb-1">Eco-Friendly Operations</h6>
+                <p class="small text-secondary mb-0">Adopting zero-waste discharge and sustainable manufacturing
+                  methods.</p>
+              </div>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="600">
+              <div class="border border-2 rounded-4 p-3 text-center shadow-sm h-100">
+                <i class="fas fa-certificate fa-2x mb-2" style="color:#FFC72C;"></i>
+                <h6 class="fw-semibold mb-1">Global Certifications</h6>
+                <p class="small text-secondary mb-0">Compliant with ISO, GMP, and FDA-approved manufacturing standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Counters -->
+      <div class="row text-center mt-5 g-3">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="700">
+          <h3 class="fw-bold" style="color:#004990;">3+</h3>
+          <p class="small text-secondary mb-0">Manufacturing Plants</p>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="800">
+          <h3 class="fw-bold" style="color:#FFC72C;">10,000+</h3>
+          <p class="small text-secondary mb-0">Tons Annual Output</p>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="900">
+          <h3 class="fw-bold" style="color:#004990;">100%</h3>
+          <p class="small text-secondary mb-0">Purity Assurance</p>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="1000">
+          <h3 class="fw-bold" style="color:#FFC72C;">24/7</h3>
+          <p class="small text-secondary mb-0">Production Monitoring</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 900, once: true });
+    </script>
+  </section>
+
+
+  <section id="innovation" class="py-5"
+    style="font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#e8f0fb 0%,#ffffff 100%); position:relative; overflow:hidden;">
+
+    <!-- Decorative background elements -->
+    <div
+      style="position:absolute; top:-80px; right:-120px; width:250px; height:250px; background:#FFC72C22; border-radius:50%; filter:blur(60px);">
+    </div>
+    <div
+      style="position:absolute; bottom:-100px; left:-100px; width:300px; height:300px; background:#00499022; border-radius:50%; filter:blur(60px);">
+    </div>
+
+    <div class="container position-relative" data-aos="fade-up">
+
+      <!-- Title -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3" style="color:#004990;">
+          Research & <span style="color:#FFC72C;">Innovation</span>
+        </h2>
+        <span style="display:block;width:100px;height:4px;margin:10px auto 20px;
+                   background:linear-gradient(90deg,#004990,#FFC72C);border-radius:10px;"></span>
+        <p class="text-secondary mb-0" style="max-width:700px;margin:auto;">
+          Empowering progress through advanced chemistry, sustainable practices, and scientific excellence.
+        </p>
+      </div>
+
+      <div class="row align-items-center gy-5">
+
+        <!-- Left: Video/Image -->
+        <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="rounded-4 overflow-hidden shadow-lg border border-3" style="border-color:#00499033;">
+            <video 
+    src="images/Rupesh SIr Youtube Video.mp4" poster="images/Screenshot (153).png" controls loop playsinline class="w-100 rounded-4"style="aspect-ratio:16/9; box-shadow:0 4px 20px rgba(0,0,0,0.2);">Your browser does not support the video tag.
+</video>
+          </div>
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <h4 class="fw-semibold mb-3" style="color:#004990;">
+            Driven by Science, Guided by Excellence
+          </h4>
+          <p class="text-secondary mb-4" style="font-size:0.95rem;">
+            Our state-of-the-art R&D division continuously pioneers new methods in solvent purification,
+            process efficiency, and environmental safety. Equipped with cutting-edge labs and
+            a team of expert chemists, CCPL ensures every Valorol™ product meets the highest
+            international standards of quality and reliability.
+          </p>
+
+          <!-- Animated Stat Cards -->
+          <div class="row g-3 text-center">
+
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+              <div class="stat-card">
+                <h3 class="fw-bold counter" style="color:#004990;">25+</h3>
+                <p class="small text-secondary mb-0">Years Experience</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+              <div class="stat-card">
+                <h3 class="fw-bold counter" style="color:#FFC72C;">10K+</h3>
+                <p class="small text-secondary mb-0">Tons Annually</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="500">
+              <div class="stat-card">
+                <h3 class="fw-bold counter" style="color:#004990;">50+</h3>
+                <p class="small text-secondary mb-0">R&D Experts</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="600">
+              <div class="stat-card">
+                <h3 class="fw-bold counter" style="color:#FFC72C;">100%</h3>
+                <p class="small text-secondary mb-0">QA</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Style & Hover Animations -->
+    <style>
+      .stat-card {
+        border: 2px solid transparent;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 15px 10px;
+        transition: all .3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-6px);
+        border: 2px solid #FFC72C;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(180deg, #ffffff, #fffbe9);
+      }
+
+      #innovation iframe:hover {
+        filter: brightness(1.05) saturate(1.1);
+        transition: all .3s ease;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 900, once: true });
+    </script>
+  </section>
+
+
+  <section id="testimonials" class="py-5"
+    style="background:linear-gradient(180deg,#f8f9fb 0%,#e9f2fa 100%); font-family:'Poppins',sans-serif;">
+    <div class="container" data-aos="fade-up">
+
+      <!-- Section Title -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color:#004990;">What Our <span style="color:#FFC72C;">Clients Say</span></h2>
+        <p class="text-secondary mb-0">Trusted globally by industries that value quality, reliability, and innovation.
+        </p>
+      </div>
+
+      <!-- Carousel -->
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500"
+        data-bs-pause="hover">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-4 justify-content-center">
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#004990;"></i>
+                  <p class="text-secondary">“Valorol solvents consistently exceed pharmaceutical-grade expectations.
+                    CCPL’s quality assurance is remarkable.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Pharma Manufacturer</h6>
+                  <small class="text-muted">India</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#FFC72C;"></i>
+                  <p class="text-secondary">“Valorol’s reliability and purity standards make them an ideal supplier for
+                    our formulations.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Agrochemical Supplier</h6>
+                  <small class="text-muted">Europe</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#004990;"></i>
+                  <p class="text-secondary">“Excellent consistency in solvent performance — our coatings division
+                    depends on their precision.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Paints & Coatings Industry</h6>
+                  <small class="text-muted">Middle East</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#FFC72C;"></i>
+                  <p class="text-secondary">“CCPL’s professionalism and timely deliveries make them an invaluable
+                    partner in manufacturing.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Industrial Manufacturer</h6>
+                  <small class="text-muted">Singapore</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#004990;"></i>
+                  <p class="text-secondary">“We appreciate Valorol’s commitment to sustainability and international
+                    certifications.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Cosmetic Manufacturer</h6>
+                  <small class="text-muted">USA</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="border border-2 rounded-4 bg-white shadow-sm p-4 text-center h-100">
+                  <i class="fa-solid fa-quote-left fa-2x mb-3" style="color:#FFC72C;"></i>
+                  <p class="text-secondary">“Our R&D team trusts Valorol solvents for consistent lab results and
+                    superior purity.”</p>
+                  <h6 class="fw-semibold mt-3 mb-0">Laboratory Supplier</h6>
+                  <small class="text-muted">Germany</small>
+                  <div class="mt-2 text-warning">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="filter:invert(20%) sepia(80%) saturate(400%) hue-rotate(200deg);"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="filter:invert(20%) sepia(80%) saturate(400%) hue-rotate(200deg);"></span>
+      </button> -->
+
+
+        <!-- Partner Logos Section -->
+        <!-- <div class="mt-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-center my-4">
+            <h6 class="text-uppercase fw-semibold text-secondary mb-3" style="letter-spacing:1px; text-align:center;">
+              Trusted By
+            </h6>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center flex-wrap gap-4"> -->
+
+        <!-- Partner 1 -->
+        <!-- <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+              <img src="images/adnan.jpeg" alt="Adnan" height="130" width="130" class="shadow-sm mb-2"
+                style="border-radius:12px; object-fit:cover;">
+              <h6 class="fw-semibold text-secondary mb-0">Adnan</h6>
+            </div> -->
+
+        <!-- Partner 2 -->
+        <!-- <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+              <img src="images/azr.jpeg" alt="Azr" height="130" width="130" class="shadow-sm mb-2"
+                style="border-radius:12px; object-fit:cover;">
+              <h6 class="fw-semibold text-secondary mb-0">Anzar</h6>
+            </div> -->
+
+        <!-- Partner 3 -->
+        <!-- <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+              <img src="images/fahad 1.jpg" alt="Fahad" height="130" width="130" class="shadow-sm mb-2"
+                style="border-radius:12px; object-fit:cover;">
+              <h6 class="fw-semibold text-secondary mb-0">Fahad</h6>
+            </div> -->
+
+        <!-- Partner 4 -->
+        <!-- <div class="text-center" data-aos="fade-up" data-aos-delay="700">
+              <img src="images/RUPESH.jpeg" alt="Rupesh" height="130" width="130" class="shadow-sm mb-2"
+                style="border-radius:12px; object-fit:cover;">
+              <h6 class="fw-semibold text-secondary mb-0">Rupesh</h6>
+            </div>
+
+          </div>
+        </div> -->
+
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5" style="background-color:#ffffff; color:#004990; font-family:'Poppins',sans-serif;">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Title -->
+    <h2 class="fw-bold mb-3 text-center">Partner with <span style="color:#FFC72C;">Valorol</span></h2>
+    <p class="lead mb-5 text-center text-secondary px-2">
+      Let’s Build a Sustainable Future Together — Empowering Industries with Purity and Performance.
+    </p>
+
+    <div class="row gy-4">
+      <!-- Left: Contact Info -->
+      <div class="col-md-6" data-aos="fade-right">
+        <!-- CTA Buttons -->
+        <div class="d-flex flex-column flex-md-row gap-3 mb-4 justify-content-center justify-content-md-start">
+          <a href="contactus.html" class="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm"
+            style="background-color:#004990; border:none;">
+            <i class="fa-solid fa-envelope me-2"></i>Contact Us
+          </a>
+          <a href="assets/Valorol_Brochure.pdf" class="btn px-4 py-2 fw-semibold rounded-pill shadow-sm"
+            style="background-color:#FFC72C; color:#004990;">
+            <i class="fa-solid fa-download me-2"></i>Download Brochure
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="text-center text-md-start">
+          <div class="mb-3">
+            <i class="fa-solid fa-phone fa-lg mb-2" style="color:#004990;"></i>
+            <p class="mb-1 fw-semibold">+91 9619662255</p>
+            <small class="text-secondary">Mon–Sat, 9 AM – 6 PM</small>
+          </div>
+          <div class="mb-3">
+            <i class="fa-solid fa-envelope fa-lg mb-2" style="color:#004990;"></i>
+            <p class="mb-1 fw-semibold">admin@valorol.com</p>
+            <small class="text-secondary">We respond within 24 hours</small>
+          </div>
+          <div class="mb-3">
+            <i class="fa-solid fa-location-dot fa-lg mb-2" style="color:#004990;"></i>
+            <p class="mb-1 fw-semibold">B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
+            <small class="text-secondary">Corporate Headquarters</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Google Map -->
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="rounded-4 shadow-lg overflow-hidden border border-light-subtle" style="height: 100%; min-height: 300px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30174.47423174514!2d73.106483!3d19.028124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9c36b20afcd%3A0xad26d0bfa8dddf10!2sCognizant%20Chemical%20Pvt.%20Ltd.!5e0!3m2!1sen!2sus!4v1761183480697!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @media (max-width: 768px) {
+      #contact h2 {
+        font-size: 1.8rem;
+      }
+      #contact p.lead {
+        font-size: 1rem;
+      }
+      #contact iframe {
+        min-height: 250px;
+      }
+    }
+  </style>
+</section>
+
+
+ <!-- ✅ Only one Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ✅ AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+  <!-- ====== CONTACT / CTA SECTION ====== -->
+
+
+
+
+
+
+
+  <!-- Required JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+
+  <script>
+    // Navbar color change on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+  <!-- ✅ Bootstrap JS Bundle -->
+
+  <!-- ✅ AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- ✅ Magnific Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <!-- ✅ Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
