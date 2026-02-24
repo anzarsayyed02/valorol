@@ -219,13 +219,16 @@
           </div>
         </div>
 
-        <!-- View toggle icons -->
+        <!-- View toggle icons + Refresh Button -->
         <div class="col-auto view-toggle d-flex gap-2">
           <button id="gridViewBtn" class="btn active" title="Grid View">
             <i class="bi bi-grid-fill fs-5"></i>
           </button>
           <button id="listViewBtn" class="btn" title="List View">
             <i class="bi bi-list-task fs-5"></i>
+          </button>
+          <button id="refreshBtn" class="btn" title="Refresh Data" style="border: 2px solid #005596; color: #005596;">
+            <i class="bi bi-arrow-clockwise fs-5"></i>
           </button>
         </div>
       </div>
@@ -255,19 +258,27 @@ let coaData = [];
 const coaContainer = document.getElementById('coaList');
 let currentView = 'grid';
 
-// Fetch COA data from JSON file
-fetch('coa_data.json')
-  .then(response => {
-    if (!response.ok) throw new Error('Failed to load COA data');
-    return response.json();
-  })
-  .then(data => {
-    coaData = data;
-    displayCOAs(coaData);
-  })
-  .catch(error => {
-    coaContainer.innerHTML = '<p class="text-center text-muted fs-5">Unable to load COA data. Please try again later.</p>';
-  });
+// Function to reload COA data from JSON
+function reloadCoaData() {
+  // Cache busting - add timestamp to prevent browser caching
+  fetch('coa_data.json?t=' + new Date().getTime())
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load COA data');
+      return response.json();
+    })
+    .then(data => {
+      coaData = data;
+      displayCOAs(coaData);
+      console.log('✅ COA data loaded:', data.length, 'entries');
+    })
+    .catch(error => {
+      console.error('❌ Error loading COA data:', error);
+      coaContainer.innerHTML = '<p class="text-center text-muted fs-5">Unable to load COA data. Please try again later.</p>';
+    });
+}
+
+// Initial load
+reloadCoaData();
 
 // Display Function
 function displayCOAs(data) {
@@ -303,7 +314,7 @@ if (currentView === 'grid') {
                 <strong>Batch:</strong> ${item.batch}<br>
                 <strong>Code:</strong> ${item.code}<br>
               </p>
-              <div class="d-flex justify-content-center gap-2">
+              <div class="d-flex justify-content-center gap-2 flex-wrap">
                 <a href="assets/coa/${item.file}" target="_blank" 
                    class="btn btn-outline-primary btn-sm rounded-pill px-3">
                   <i class="bi bi-eye me-1"></i> Preview
@@ -313,6 +324,12 @@ if (currentView === 'grid') {
                    style="color:#004990;">
                   <i class="bi bi-download me-1"></i> Download
                 </a>
+                ${item.qr_code ? `
+                <button class="btn btn-success btn-sm rounded-pill px-3 fw-semibold" 
+                        onclick="showQRModal('${item.qr_code}', '${item.product}', '${item.batch}')">
+                  <i class="bi bi-qr-code me-1"></i> QR Code
+                </button>
+                ` : ''}
               </div>
             </div>
           </div>
@@ -349,12 +366,51 @@ if (currentView === 'grid') {
                class="btn btn-warning btn-sm rounded-pill px-3 fw-semibold" style="color:#004990;">
               <i class="bi bi-download me-1"></i> Download
             </a>
+            ${item.qr_code ? `
+            <button class="btn btn-success btn-sm rounded-pill px-3 fw-semibold" 
+                    onclick="showQRModal('${item.qr_code}', '${item.product}', '${item.batch}')">
+              <i class="bi bi-qr-code me-1"></i> QR Code
+            </button>
+            ` : ''}
           </div>
         </div>
       </div>
     `).join('');
   }
 }
+
+// ────────────────────────────────────────
+// QR CODE MODAL
+// ────────────────────────────────────────
+function showQRModal(qrFilename, productName, batchNumber) {
+  const modal = document.getElementById('qrModal');
+  const qrImage = document.getElementById('qrImage');
+  const qrTitle = document.getElementById('qrTitle');
+  const qrBatch = document.getElementById('qrBatch');
+  
+  qrImage.src = 'assets/qr/' + qrFilename;
+  qrTitle.textContent = productName + ' - QR Code';
+  if (qrBatch) {
+    qrBatch.textContent = batchNumber ? ('Batch No: ' + batchNumber) : '';
+    qrBatch.style.display = batchNumber ? 'block' : 'none';
+  }
+  modal.style.display = 'flex';
+  modal.style.justifyContent = 'center';
+  modal.style.alignItems = 'center';
+}
+
+function closeQRModal() {
+  const modal = document.getElementById('qrModal');
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('qrModal');
+  if (event.target === modal) {
+    closeQRModal();
+  }
+});
 
 // Search Function
 function searchCOAs() {
@@ -383,6 +439,20 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
   document.getElementById('listViewBtn').classList.add('active');
   document.getElementById('gridViewBtn').classList.remove('active');
   searchCOAs();
+});
+
+// Refresh Button - Reload data and show updated QR codes
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  const btn = document.getElementById('refreshBtn');
+  btn.style.transform = 'rotate(360deg)';
+  btn.style.transition = 'transform 0.6s ease-in-out';
+  
+  reloadCoaData();
+  
+  // Reset rotation after animation
+  setTimeout(() => {
+    btn.style.transform = 'rotate(0deg)';
+  }, 600);
 });
   </script>
 <!-- Required JS -->
@@ -418,6 +488,113 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
     });
   </script>
 </body>
+
+<!-- QR CODE MODAL -->
+<div id="qrModal" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+">
+  <!-- Modal Content -->
+  <div style="
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-in-out;
+    position: relative;
+
+    transform: translateY(40px);
+  ">
+    <!-- Close Button -->
+    <button onclick="closeQRModal()" style="
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 32px;
+      cursor: pointer;
+      color: #666;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    ">×</button>
+    
+    <!-- Title -->
+    <h4 id="qrTitle" class="text-center mb-4 fw-bold" style="color: #004990;"></h4>
+    
+    <!-- QR Code Image -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img id="qrImage" src="" alt="QR Code" style="
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      ">
+      <p id="qrBatch" style="font-weight:600; text-align:center; margin-top:10px; margin-bottom:0; color:#222; display:none;"></p>
+    </div>
+    
+    <!-- Instructions -->
+    <p class="text-center text-muted small mb-4">
+      <i class="bi bi-info-circle me-2"></i>
+      Scan this QR code with any smartphone camera or QR code reader to access the PDF.
+    </p>
+    
+    <!-- Download Button -->
+    <div class="text-center">
+      <button onclick="downloadQRCode()" class="btn btn-primary rounded-pill px-4" style="background-color: #004990; border: none;">
+        <i class="bi bi-download me-2"></i> Download QR Code
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Animations and close function -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  // Download QR Code functionality
+  function downloadQRCode() {
+    const qrImage = document.getElementById('qrImage');
+    const link = document.createElement('a');
+    link.href = qrImage.src;
+    link.download = qrImage.src.split('/').pop();
+    link.click();
+  }
+</script>
+
 <footer class="text-light pt-5"
   style="background:linear-gradient(135deg,#002b5c 0%,#004990 100%); font-family:'Poppins',sans-serif;">
   <div class="container">
@@ -426,7 +603,7 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
 
       <!-- Company Info -->
       <div class="col-lg-4 col-md-6">
-        <img src="images/Valorol.png" alt="Valorol Logo" class="mb-3 img-fluid" style="max-width:150px;">
+        <img src="images/Valorol.png" alt="Valorol Logo" class="mb-3 img-fluid" style="max-width:120px; background-color: #ffffff; padding: 2px; border-radius: 8px; display: inline-block;">
         <p class="text-light opacity-75 small">
           Valorol by Cognizant Chemical Pvt. Ltd. is a trusted brand in pharmacopeia-grade solvents - ensuring
           unmatched purity and performance across industries.
@@ -466,7 +643,7 @@ document.getElementById('listViewBtn').addEventListener('click', () => {
         <h5 class="fw-semibold text-uppercase mb-3" style="color:#FFC72C;">Contact Us</h5>
         <p class="mb-1 small"><i class="fas fa-map-marker-alt me-2 text-warning"></i> B-120, Disma Office Premises, Steel Market, Kalamboli, Navi Mumbai-410218</p>
         <p class="mb-1 small"><i class="fas fa-envelope me-2 text-warning"></i> admin@valorol.com</p>
-        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 9619662255   /   +91 9930272227</p>
+        <p class="small"><i class="fas fa-phone me-2 text-warning"></i> +91 8097323618 / +91 9930272227</p>
       </div>
 
     </div>
